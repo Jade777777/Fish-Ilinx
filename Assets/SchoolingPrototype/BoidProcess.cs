@@ -38,11 +38,11 @@ public class BoidProcess : MonoBehaviour
         foreach(Boid boid in boids)
         {
             Vector3 newVelocity = Vector3.zero;
-            newVelocity += AlignmentRule(boid)*0.2f;
+            newVelocity += AlignmentRule(boid)*0.2f;//TODO: Velocity is not being matched properly
             newVelocity += CohesionRule(boid)*0.3f;
             newVelocity += AvoidanceRule(boid)*5f;
-            newVelocity += ObstacleAvoidanceRule(boid)*5f;
-            newVelocity += TargetRule(boid)*3f;
+            newVelocity += ObstacleAvoidanceRule(boid)*10f;//this should be checking and limiting the overall moveemnt rather than
+            newVelocity += TargetRule(boid)*2.5f;
 
             boid.TargetVelocity = Vector3.ClampMagnitude(newVelocity+boid.CurrentVelocity, boidMaxSpeed);   //
             if (boid.TargetVelocity.magnitude < boidMinSpeed)
@@ -128,7 +128,7 @@ public class BoidProcess : MonoBehaviour
 
     public Vector3 TargetRule(Boid boid)
     {
-        float maxDistance =10;
+        float maxDistance =12;
         Vector3 direction = Vector3.zero;
         foreach(GameObject target in targets)
         {
