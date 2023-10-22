@@ -114,16 +114,26 @@ public class BoidProcess : MonoBehaviour
     private Vector3 ObstacleAvoidanceRule(Boid boid)
     {
         Vector3 direction = Vector3.zero;
-        float distance=avoidanceRange*3;// This should be determined by turn radius or something like that, might move the whole thing to the motor script
+        float distance= 3;// This should be determined by turn radius or something like that, might move the whole thing to the motor script
 
         int layerMask = 1 << LayerMask.NameToLayer("Default");
-        if (Physics.Raycast(boid.transform.position, boid.transform.forward, out RaycastHit hit, distance,layerMask ))
+        //if (Physics.Raycast(boid.transform.position, boid.transform.forward, out RaycastHit hit, distance, layerMask))
+        //{
+        //    float magnitude = 1 - ((hit.point - boid.transform.position).magnitude / distance);
+        //    direction = hit.normal * magnitude;
+        //}
+        Collider[] collisions = Physics.OverlapSphere(boid.transform.position, distance);
+
+        foreach (Collider collision in collisions)
         {
-            float magnitude = 1 - ((hit.point - boid.transform.position).magnitude / distance);
-            direction = hit.normal * magnitude;
+            Vector3 offset = (collision.ClosestPoint(boid.transform.position) - boid.transform.position);
+            float magnitude = 1 - (offset.magnitude / distance);
+            direction -= offset.normalized * magnitude;
+
         }
 
-        return direction;
+
+        return direction; 
     }
 
     public Vector3 TargetRule(Boid boid)
