@@ -133,5 +133,33 @@ public class BoidGridPartition
         boid.neighbors = boidsInRange;
         return boidsInRange;
     }
+    public List<Boid> GetBoidsInRange(Vector3 position, float range)
+    {
+        List<Boid> boidsInRange = new List<Boid>();
+        Vector3Int originVoxel = GetVoxel(position);
+        int distanceInVoxels = Mathf.CeilToInt(range / voxelSize);// 0,0,0 is the boids origin
+        Vector3Int offset;
+        for (int x = -distanceInVoxels; x <= distanceInVoxels; x++)
+        {
+            for (int y = -distanceInVoxels; y <= distanceInVoxels; y++)
+            {
+                for (int z = -distanceInVoxels; z <= distanceInVoxels; z++)
+                {
+                    offset = new Vector3Int(x, y, z);
+
+                    if (VoxelToBoids.TryGetValue(originVoxel + offset, out List<Boid> boids))
+                    {
+                        for (int i = 0; i < boids.Count; i++)
+                        {
+                            Boid neighbor = VoxelToBoids[originVoxel + offset][i];
+                            boidsInRange.Add(neighbor);
+                        }
+                    }
+                }
+            }
+        }
+
+        return boidsInRange;
+    }
 
 }
