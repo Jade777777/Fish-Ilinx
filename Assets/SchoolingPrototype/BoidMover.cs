@@ -35,15 +35,15 @@ public class BoidMover : MonoBehaviour
         float dist = 1f;
         Collider[] collisions = Physics.OverlapSphere(transform.position, dist);
         Vector3 direction = Vector3.zero;
-        foreach (Collider collision in collisions)
-        {
-            Vector3 offset = (collision.ClosestPoint(transform.position) - transform.position);
-            float magnitude = 1 - (offset.magnitude/dist);
-            direction +=  offset.normalized*magnitude;
+        //foreach (Collider collision in collisions)
+        //{
+        //    Vector3 offset = (collision.ClosestPoint(transform.position) - transform.position);
+        //    float magnitude = 1 - (offset.magnitude/dist);
+        //    direction +=  offset.normalized;
             
-        }
+        //}
         
-        boid.TargetVelocity = -direction.normalized;
+        //boid.TargetVelocity = -direction.normalized;
         boid.CurrentVelocity = Vector3.zero;
         Debug.Log("Collision");
     }
