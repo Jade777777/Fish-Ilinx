@@ -15,6 +15,8 @@ public class BoidProcess : MonoBehaviour
 
     public List<Boid> boids = new List<Boid>();
 
+    public LayerMask collisionLayer;
+
 
 
     public BoidGridPartition boidGridPartition=  new BoidGridPartition(2);
@@ -114,7 +116,7 @@ public class BoidProcess : MonoBehaviour
     private Vector3 ObstacleAvoidanceRule(Boid boid)
     {
         Vector3 direction = Vector3.zero;
-        float distance= 3;// This should be determined by turn radius or something like that, might move the whole thing to the motor script
+        float distance= 5;// This should be determined by turn radius or something like that, might move the whole thing to the motor script
 
         int layerMask = 1 << LayerMask.NameToLayer("Default");
         //if (Physics.Raycast(boid.transform.position, boid.transform.forward, out RaycastHit hit, distance, layerMask))
@@ -122,12 +124,13 @@ public class BoidProcess : MonoBehaviour
         //    float magnitude = 1 - ((hit.point - boid.transform.position).magnitude / distance);
         //    direction = hit.normal * magnitude;
         //}
-        Collider[] collisions = Physics.OverlapSphere(boid.transform.position, distance);
+        Collider[] collisions = Physics.OverlapSphere(boid.transform.position, distance,collisionLayer);
 
         foreach (Collider collision in collisions)
         {
             Vector3 offset = (collision.ClosestPoint(boid.transform.position) - boid.transform.position);
             float magnitude = 1 - (offset.magnitude / distance);
+            
             direction -= offset.normalized * magnitude;
 
         }
@@ -138,7 +141,7 @@ public class BoidProcess : MonoBehaviour
 
     public Vector3 TargetRule(Boid boid)
     {
-        float maxDistance =12;
+        float maxDistance =14;
         Vector3 direction = Vector3.zero;
         foreach(GameObject target in targets)
         {
@@ -147,6 +150,7 @@ public class BoidProcess : MonoBehaviour
             if(offset.magnitude <= maxDistance)
             {
                 float magnitude = 1 - offset.magnitude / maxDistance;
+  
                 direction += offset.normalized; //*magnitude;
             }
         }
