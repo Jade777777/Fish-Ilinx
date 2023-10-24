@@ -11,7 +11,7 @@ public class FollowMouse : MonoBehaviour
     [SerializeField] private LayerMask Background;
     [SerializeField] private LayerMask Deadzone;
     [SerializeField] private float MovementSpeed;
-    private float RotateSpeed = 1f;
+    
 
     Rigidbody Rb;
     bool CanMove;
