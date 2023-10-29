@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0, g: 0.15907454, b: 1, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.06
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -572,7 +572,7 @@ MonoBehaviour:
   boidPrefab: {fileID: 5236159836727924889, guid: 30012fb5f8506ff46a9d9fb7ce4401f5,
     type: 3}
   SpawnRadius: 1
-  SpawnAmount: 60
+  SpawnAmount: 100
 --- !u!4 &389575256
 Transform:
   m_ObjectHideFlags: 0
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   boidPrefab: {fileID: 5236159836727924889, guid: 30012fb5f8506ff46a9d9fb7ce4401f5,
     type: 3}
   SpawnRadius: 1
-  SpawnAmount: 60
+  SpawnAmount: 100
 --- !u!4 &882302721
 Transform:
   m_ObjectHideFlags: 0
@@ -2400,6 +2400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478032395}
   - component: {fileID: 1478032394}
+  - component: {fileID: 1478032396}
   m_Layer: 0
   m_Name: Boidprocess
   m_TagString: Untagged
@@ -2445,6 +2446,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478032396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478032393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa3cb5a614609145a6b5842e54d7b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowCells: 0
 --- !u!1 &1731623795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,7 +2911,7 @@ MonoBehaviour:
   boidPrefab: {fileID: 5236159836727924889, guid: 30012fb5f8506ff46a9d9fb7ce4401f5,
     type: 3}
   SpawnRadius: 1
-  SpawnAmount: 60
+  SpawnAmount: 100
 --- !u!4 &2000520923
 Transform:
   m_ObjectHideFlags: 0

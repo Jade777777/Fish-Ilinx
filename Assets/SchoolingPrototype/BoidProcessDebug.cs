@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoidProcessDebug : MonoBehaviour
 {
-    /*
+    
     public bool ShowCells;
     private BoidProcess boidProcess;
     private void Awake()
@@ -31,5 +31,5 @@ public class BoidProcessDebug : MonoBehaviour
             }
         }
     }
-    */
+  
 }
