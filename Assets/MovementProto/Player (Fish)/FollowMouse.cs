@@ -10,6 +10,7 @@ public class FollowMouse : MonoBehaviour
     [SerializeField] private Camera MainCamera;
     [SerializeField] private LayerMask Background;
     [SerializeField] private LayerMask Deadzone;
+    [SerializeField] private LayerMask Avoidable;
     [SerializeField] private float MovementSpeed;
     
 
@@ -26,14 +27,21 @@ public class FollowMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FollowM();
+    }
+
+    void FollowM()
+    {
+        // Get the mouse postion from the camera to move the player (Fish)
         Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
-        
+
         if (Physics.Raycast(ray, out RaycastHit raycasthit, float.MaxValue, Background) && CanMove == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, raycasthit.point, Time.deltaTime * MovementSpeed);
             transform.LookAt(new Vector3(raycasthit.point.x, raycasthit.point.y, transform.position.z));
         }
-        
+
+        // Controls the Deadzone of the player (Fish)
         if (Physics.Raycast(ray, out raycasthit, float.MaxValue, Deadzone))
         {
             CanMove = false;
@@ -45,6 +53,7 @@ public class FollowMouse : MonoBehaviour
         }
 
     }
+
 
     private void FixedUpdate()
     {
