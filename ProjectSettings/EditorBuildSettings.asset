@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Integration/Integration.unity
     guid: 5ac1976a52fcdb94198c61fc32590c17
   - enabled: 0
-    path: Assets/SchoolingPrototype/SchoolingDemo.unity
+    path: Assets/Schooling/SchoolingDemo.unity
     guid: a29f080ecf383ff4b9fba1d21e335705
   m_configObjects: {}

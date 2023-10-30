@@ -587,6 +587,9 @@ MonoBehaviour:
   targets:
   - {fileID: 121941103}
   boids: []
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!4 &172824311
 Transform:
   m_ObjectHideFlags: 0

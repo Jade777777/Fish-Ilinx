@@ -5,11 +5,17 @@ using UnityEngine.Rendering.Universal;
 
 public class BoidProcess : MonoBehaviour
 {
+    public BoxCollider collider;
+    private Bounds bounds;
+    public float boundFallOff;
     public float boidRange = 3;
     public float avoidanceRange = 2;
     public float viewAngle =270;
     public float boidMaxSpeed=10;
     public float boidMinSpeed=4;
+
+    
+
 
     public List<GameObject> targets;
 
@@ -24,6 +30,7 @@ public class BoidProcess : MonoBehaviour
     
     void Start()
     {
+        bounds = collider.bounds;
         foreach(Boid boid in FindObjectsOfType(typeof(Boid)))
         {
             boids.Add(boid);
@@ -45,7 +52,7 @@ public class BoidProcess : MonoBehaviour
             newVelocity += AvoidanceRule(boid)*5f;
             newVelocity += ObstacleAvoidanceRule(boid)*10f;//this should be checking and limiting the overall moveemnt rather than
             newVelocity += TargetRule(boid)*2.5f;
-
+            newVelocity += BoundsRule(boid)*20f;
             boid.TargetVelocity = Vector3.ClampMagnitude(newVelocity+boid.CurrentVelocity, boidMaxSpeed);   //
             if (boid.TargetVelocity.magnitude < boidMinSpeed)
             {
@@ -118,12 +125,6 @@ public class BoidProcess : MonoBehaviour
         Vector3 direction = Vector3.zero;
         float distance= 5;// This should be determined by turn radius or something like that, might move the whole thing to the motor script
 
-        int layerMask = 1 << LayerMask.NameToLayer("Default");
-        //if (Physics.Raycast(boid.transform.position, boid.transform.forward, out RaycastHit hit, distance, layerMask))
-        //{
-        //    float magnitude = 1 - ((hit.point - boid.transform.position).magnitude / distance);
-        //    direction = hit.normal * magnitude;
-        //}
         Collider[] collisions = Physics.OverlapSphere(boid.transform.position, distance,collisionLayer);
 
         foreach (Collider collision in collisions)
@@ -156,7 +157,17 @@ public class BoidProcess : MonoBehaviour
         }
         return direction;
     }
-
+    public Vector3 BoundsRule(Boid boid)
+    {
+        Vector3 direction = Vector3.zero;
+        if (!bounds.Contains(boid.transform.position))
+        {
+            Vector3 offset = bounds.ClosestPoint(boid.transform.position)-boid.transform.position;
+            float magnitude = 1 - offset.magnitude - boundFallOff;
+            direction -= offset.normalized * magnitude;
+        }
+        return direction;
+    }
 
     public void InitBoid(GameObject boidPrefab, Vector3 position, Quaternion rotation)
     {
