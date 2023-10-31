@@ -35,9 +35,20 @@ public class FollowMouse : MonoBehaviour
         // Get the mouse postion from the camera to move the player (Fish)
         Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
 
+        //define movement plane (we can replace this with a curved surface in the future if we want to)
+        //Plane movementPlane = new Plane(Vector3.forward, Vector3.zero);
+
+        //if(movementPlane.Raycast(ray, out float enter))
+        //{
+        //    Vector3 hitPoint = ray.GetPoint(enter);
+        //    Vector3 offset = hitPoint - transform.position;
+        //    Rb.Move(transform.position + offset.normalized * MovementSpeed * Time.deltaTime,Quaternion.LookRotation(offset,Vector3.up));
+        //    Debug.Log(offset);
+        //}
         if (Physics.Raycast(ray, out RaycastHit raycasthit, float.MaxValue, Background) && CanMove == true)
         {
-            transform.position = Vector3.MoveTowards(transform.position, raycasthit.point, Time.deltaTime * MovementSpeed);
+            //transform.position = Vector3.MoveTowards(transform.position, raycasthit.point, Time.deltaTime * MovementSpeed);
+            transform.position = raycasthit.point;
             transform.LookAt(new Vector3(raycasthit.point.x, raycasthit.point.y, transform.position.z));
         }
 

@@ -5,9 +5,9 @@ using UnityEngine.Rendering.Universal;
 
 public class BoidProcess : MonoBehaviour
 {
-    public BoxCollider collider;
+    public BoxCollider boundCollider;
     private Bounds bounds;
-    public float boundFallOff;
+    public float boundFallOffDistance = 1f;
     public float boidRange = 3;
     public float avoidanceRange = 2;
     public float viewAngle =270;
@@ -30,7 +30,7 @@ public class BoidProcess : MonoBehaviour
     
     void Start()
     {
-        bounds = collider.bounds;
+        bounds = boundCollider.bounds;
         foreach(Boid boid in FindObjectsOfType(typeof(Boid)))
         {
             boids.Add(boid);
@@ -52,7 +52,7 @@ public class BoidProcess : MonoBehaviour
             newVelocity += AvoidanceRule(boid)*5f;
             newVelocity += ObstacleAvoidanceRule(boid)*10f;//this should be checking and limiting the overall moveemnt rather than
             newVelocity += TargetRule(boid)*2.5f;
-            newVelocity += BoundsRule(boid)*20f;
+            newVelocity += BoundsRule(boid)*10f;
             boid.TargetVelocity = Vector3.ClampMagnitude(newVelocity+boid.CurrentVelocity, boidMaxSpeed);   //
             if (boid.TargetVelocity.magnitude < boidMinSpeed)
             {
@@ -163,8 +163,9 @@ public class BoidProcess : MonoBehaviour
         if (!bounds.Contains(boid.transform.position))
         {
             Vector3 offset = bounds.ClosestPoint(boid.transform.position)-boid.transform.position;
-            float magnitude = 1 - offset.magnitude - boundFallOff;
-            direction -= offset.normalized * magnitude;
+            float magnitude = offset.magnitude/boundFallOffDistance;
+           // magnitude = Mathf.Pow( magnitude, 2);
+            direction = offset.normalized * magnitude;
         }
         return direction;
     }
