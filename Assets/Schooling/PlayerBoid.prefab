@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
-  smoothDistance: 1
+  smoothDistance: 2
   maxSpeed: 10
   minSpeed: 4
   turnSpeed: 90
