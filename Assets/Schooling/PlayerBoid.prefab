@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 4105260820930901725}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &70840684875147112
 MonoBehaviour:
@@ -62,15 +62,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
-  smoothDistance: 2
+  smoothDistance: 8
   maxSpeed: 10
-  minSpeed: 4
+  minSpeed: 2
   turnSpeed: 90
+  avoidanceTurnSpeed: 180
   acceleration: 3
   size: 0.5
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!1001 &4571832614022238518
 PrefabInstance:
   m_ObjectHideFlags: 0

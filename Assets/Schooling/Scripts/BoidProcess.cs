@@ -50,10 +50,11 @@ public class BoidProcess : MonoBehaviour
             newVelocity += AlignmentRule(boid)*0.2f;//TODO: Velocity is not being matched properly
             newVelocity += CohesionRule(boid)*0.3f;
             newVelocity += AvoidanceRule(boid)*5f;
-            newVelocity += ObstacleAvoidanceRule(boid)*10f;//this should be checking and limiting the overall moveemnt rather than
-            newVelocity += TargetRule(boid)*2.5f;
+            //newVelocity += ObstacleAvoidanceRule(boid)*10f;//this should be checking and limiting the overall moveemnt rather than
+            newVelocity += TargetRule(boid)*1f;
             newVelocity += BoundsRule(boid)*10f;
-            boid.TargetVelocity = Vector3.ClampMagnitude(newVelocity+boid.CurrentVelocity, boidMaxSpeed);   //
+            boid.TargetVelocity = Vector3.ClampMagnitude(newVelocity+ boid.CurrentVelocity, boidMaxSpeed);   //
+            
             if (boid.TargetVelocity.magnitude < boidMinSpeed)
             {
                 boid.TargetVelocity = boid.TargetVelocity.normalized * boidMinSpeed;

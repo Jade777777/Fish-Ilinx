@@ -3975,8 +3975,8 @@ MonoBehaviour:
   boidRange: 3
   avoidanceRange: 2
   viewAngle: 270
-  boidMaxSpeed: 9.5
-  boidMinSpeed: 7
+  boidMaxSpeed: 11
+  boidMinSpeed: 11
   targets:
   - {fileID: 1017040125}
   boids: []
@@ -4661,29 +4661,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4054975380822221063, guid: f517e0d7b6e53d14cadedde99696027f,
         type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4054975380822221063, guid: f517e0d7b6e53d14cadedde99696027f,
-        type: 3}
-      propertyPath: turnSpeed
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 4054975380822221063, guid: f517e0d7b6e53d14cadedde99696027f,
-        type: 3}
-      propertyPath: smoothDistance
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4054975380822221063, guid: f517e0d7b6e53d14cadedde99696027f,
-        type: 3}
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1904669798}
-    - target: {fileID: 4054975380822221063, guid: f517e0d7b6e53d14cadedde99696027f,
-        type: 3}
-      propertyPath: collisionLayer.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5236159836727924889, guid: f517e0d7b6e53d14cadedde99696027f,
         type: 3}
       propertyPath: m_Name

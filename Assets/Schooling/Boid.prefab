@@ -62,8 +62,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 90
+  avoidanceTurnSpeed: 180
   acceleration: 3
-  size: 1
+  size: 1.1
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
