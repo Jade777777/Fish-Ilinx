@@ -7,18 +7,22 @@ public class RemovePath : MonoBehaviour
 {
     [SerializeField]
     private Transform player;
-    [SerializeField]
-    private Transform path;//this should be a path base class
+
     [SerializeField]
     private BoidProcess process;
     [SerializeField]
     private float radius =  10;//this should be pulled from the path base class
-
+    private Path path;//this should be a path base class
+    private void Start()
+    {
+        path = GetComponent<Path>();
+       
+    }
     private void Update()
     {
-        if (Vector3.Distance(player.position, path.position) < radius)
+        if (Vector3.Distance(player.position, transform.position) < radius)
         {
-            process.paths.Remove(path.gameObject);
+            process.paths.Remove(path);
             Destroy(path.gameObject);
         }
     }

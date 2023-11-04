@@ -17,7 +17,7 @@ public class BoidProcess : MonoBehaviour
     
 
 
-    public List<GameObject> paths;//replace with path base class
+    public List<Path> paths;//replace with path base class
 
     public List<Boid> boids = new List<Boid>();
 
@@ -124,17 +124,10 @@ public class BoidProcess : MonoBehaviour
 
     public Vector3 PathingRule(Boid boid) // add different types of pathing behaviours
     {
-        float maxDistance =14;
         Vector3 direction = Vector3.zero;
-        foreach(GameObject target in paths)
+        foreach(Path path in paths)
         {
-            Vector3 offset = target.transform.position - boid.transform.position;
-            if(offset.magnitude <= maxDistance)
-            {
-                float magnitude = 1 - offset.magnitude / maxDistance;
-  
-                direction = offset.normalized; //*magnitude;
-            }
+            direction += path.Evaluate(boid);
         }
         return direction;
     }
