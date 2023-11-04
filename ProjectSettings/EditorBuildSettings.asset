@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/_Levels/TestLevel 2.unity
     guid: 68d57ab39707e244a9baa367cf9ac7b7
   - enabled: 1
-    path: Assets/Schooling/SchoolingDemo.unity
+    path: Assets/Schooling/Testing/SchoolingDemo.unity
     guid: a29f080ecf383ff4b9fba1d21e335705
   m_configObjects: {}

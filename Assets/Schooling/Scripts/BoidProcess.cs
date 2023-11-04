@@ -17,7 +17,7 @@ public class BoidProcess : MonoBehaviour
     
 
 
-    public List<GameObject> targets;
+    public List<GameObject> paths;//replace with path base class
 
     public List<Boid> boids = new List<Boid>();
 
@@ -50,8 +50,8 @@ public class BoidProcess : MonoBehaviour
             newVelocity += AlignmentRule(boid)*0.2f;//TODO: Velocity is not being matched properly
             newVelocity += CohesionRule(boid)*0.3f;
             newVelocity += AvoidanceRule(boid)*5f;
-            //newVelocity += ObstacleAvoidanceRule(boid)*10f;//this should be checking and limiting the overall moveemnt rather than
-            newVelocity += TargetRule(boid)*1f;
+            //newVelocity += ObstacleAvoidanceRule(boid)*10f;//this should be checking and limiting the overall movement rather than
+            newVelocity += PathingRule(boid)*1f;
             newVelocity += BoundsRule(boid)*10f;
             boid.TargetVelocity = Vector3.ClampMagnitude(newVelocity+ boid.CurrentVelocity, boidMaxSpeed);   //
             
@@ -121,39 +121,19 @@ public class BoidProcess : MonoBehaviour
         return direction;
     }
 
-    private Vector3 ObstacleAvoidanceRule(Boid boid)
-    {
-        Vector3 direction = Vector3.zero;
-        float distance= 5;// This should be determined by turn radius or something like that, might move the whole thing to the motor script
 
-        Collider[] collisions = Physics.OverlapSphere(boid.transform.position, distance,collisionLayer);
-
-        foreach (Collider collision in collisions)
-        {
-            Vector3 offset = (collision.ClosestPoint(boid.transform.position) - boid.transform.position);
-            float magnitude = 1 - (offset.magnitude / distance);
-            
-            direction -= offset.normalized * magnitude;
-
-        }
-
-
-        return direction; 
-    }
-
-    public Vector3 TargetRule(Boid boid)
+    public Vector3 PathingRule(Boid boid) // add different types of pathing behaviours
     {
         float maxDistance =14;
         Vector3 direction = Vector3.zero;
-        foreach(GameObject target in targets)
+        foreach(GameObject target in paths)
         {
             Vector3 offset = target.transform.position - boid.transform.position;
-            
             if(offset.magnitude <= maxDistance)
             {
                 float magnitude = 1 - offset.magnitude / maxDistance;
   
-                direction += offset.normalized; //*magnitude;
+                direction = offset.normalized; //*magnitude;
             }
         }
         return direction;
@@ -165,7 +145,6 @@ public class BoidProcess : MonoBehaviour
         {
             Vector3 offset = bounds.ClosestPoint(boid.transform.position)-boid.transform.position;
             float magnitude = offset.magnitude/boundFallOffDistance;
-           // magnitude = Mathf.Pow( magnitude, 2);
             direction = offset.normalized * magnitude;
         }
         return direction;

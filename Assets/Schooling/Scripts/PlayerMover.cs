@@ -42,23 +42,24 @@ public class PlayerMover : MonoBehaviour
         boid.CurrentVelocity = Vector3.RotateTowards(boid.CurrentVelocity, targetVelocity ,deltaRadians , acceleration * Time.deltaTime);
 
 
+
         #region CollisionDamping
         float impactDot = Vector3.Dot(boid.CurrentVelocity, avoidance.normalized);//cur velocity in avoidance direction
         if (impactDot < 0 &&
-            obstacleDistance > 0 &&
             avoidance.magnitude > 1 - impactRange)
         {
-            if (obstacleDistance <= Mathf.Abs(impactDot) * Time.deltaTime)
+            
+            if (obstacleDistance <= Mathf.Abs(impactDot*2) * Time.deltaTime)
             {
-                boid.CurrentVelocity += avoidance.normalized * impactDot;
+                boid.CurrentVelocity -= avoidance.normalized * impactDot;
+                Debug.Log("Impacting");
             }
             else
             {
-                float dampImpact = Mathf.Pow(impactDot, 2) / (obstacleDistance);//stop movement by impact time (vi^2/d)
+                float dampImpact = Mathf.Pow(impactDot, 2) / (obstacleDistance - Mathf.Abs(impactDot) * Time.deltaTime);//stop movement by impact time (vi^2/d)
                 boid.CurrentVelocity += avoidance.normalized * dampImpact * Time.deltaTime; //
             }
         }
-
         #endregion
 
 
