@@ -2838,9 +2838,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: -25}
   SmoothTime: 0.5
+  MaxSpeed: 20
   Player: {fileID: 1717483748}
   Target: {fileID: 1904669800}
   maxDistanceFromPlayer: 4
+  deadZoneFallOff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.25144154
+      value: 0.00027891272
+      inSlope: 0.0041573746
+      outSlope: 0.0041573746
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.08207007
+      outWeight: 0.8895488
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3977,8 +4011,8 @@ MonoBehaviour:
   viewAngle: 270
   boidMaxSpeed: 9.5
   boidMinSpeed: 7
-  targets:
-  - {fileID: 1017040125}
+  paths:
+  - {fileID: 1717483749}
   boids: []
   collisionLayer:
     serializedVersion: 2
@@ -4692,7 +4726,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5236159836727924889, guid: f517e0d7b6e53d14cadedde99696027f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1717483749}
   m_SourcePrefab: {fileID: 100100000, guid: f517e0d7b6e53d14cadedde99696027f, type: 3}
 --- !u!4 &1717483748 stripped
 Transform:
@@ -4700,6 +4738,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1700915237}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1717483749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017040125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d357b4f9d3c25de43ac05df7e4384926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDistance: 12
+  Weight: 3
 --- !u!1 &1737125055
 GameObject:
   m_ObjectHideFlags: 0

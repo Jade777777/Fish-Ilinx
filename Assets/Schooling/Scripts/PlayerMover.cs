@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMover : MonoBehaviour
 {
     public GameObject targetPosition;
-    public float smoothDistance= 10f;
+    public float smoothDistance= 8f;
     public float maxSpeed = 10f;
     public float minSpeed = 4f;
 
@@ -14,6 +14,8 @@ public class PlayerMover : MonoBehaviour
     public float acceleration = 3f;
     public float size = 1f;
     public LayerMask collisionLayer;
+
+    public float deadzone = 8f;
 
     private Boid boid;
 
@@ -26,7 +28,8 @@ public class PlayerMover : MonoBehaviour
     void Update()
     {
         Vector3 offset = (targetPosition.transform.position - transform.position);
-        float magnitude = offset.magnitude / smoothDistance;
+        float magnitude = 0;
+        magnitude = offset.magnitude-deadzone / smoothDistance;
 
         float impactRange = 0.5f;
         Vector3 direction = offset.normalized;

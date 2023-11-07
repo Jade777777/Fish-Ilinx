@@ -358,9 +358,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: -25}
   SmoothTime: 0.5
+  MaxSpeed: 20
   Player: {fileID: 8921347974062447589}
   Target: {fileID: 5734721358982108112}
   maxDistanceFromPlayer: 4
+  deadZoneFallOff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.25036737
+      value: 0.00031335652
+      inSlope: 0.024559675
+      outSlope: 0.024559675
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13138393
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &7935256364652289917
 MonoBehaviour:
   m_ObjectHideFlags: 0
