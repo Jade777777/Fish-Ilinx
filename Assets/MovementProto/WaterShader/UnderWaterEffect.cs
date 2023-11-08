@@ -25,8 +25,12 @@ public class UnderWaterEffect : MonoBehaviour
             SetUnderwater();
         }
         else
-        {
-            SetNormal();
+        {   
+            // If we want fog above sea level
+            //SetNormal();
+            
+            // If we want to see above sea level
+            RenderSettings.fog = false;
         }
     }
 
