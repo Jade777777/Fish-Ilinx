@@ -17,7 +17,7 @@ public class BoidProcess : MonoBehaviour
     
 
 
-    public List<Path> paths;//replace with path base class
+    public  List<Path> paths;
 
     public List<Boid> boids = new List<Boid>();
 
@@ -30,6 +30,10 @@ public class BoidProcess : MonoBehaviour
     
     void Start()
     {
+        foreach (Path path in FindObjectsOfType(typeof(Path)))
+        {
+            paths.Add(path);
+        }
         bounds = boundCollider.bounds;
         foreach(Boid boid in FindObjectsOfType(typeof(Boid)))
         {

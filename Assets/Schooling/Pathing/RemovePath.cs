@@ -23,6 +23,7 @@ public class RemovePath : MonoBehaviour
         if (Vector3.Distance(player.position, transform.position) < radius)
         {
             process.paths.Remove(path);
+            gameObject.SetActive(false);
             Destroy(path.gameObject);
         }
     }

@@ -26,6 +26,7 @@ public class UnderWaterEffect : MonoBehaviour
         }
         else
         {
+            RenderSettings.fog = false;
             SetNormal();
         }
     }
