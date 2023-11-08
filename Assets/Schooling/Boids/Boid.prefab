@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2481071982916527710}
   - component: {fileID: 70840684875147112}
   - component: {fileID: 4633306146376876325}
+  - component: {fileID: 5405702236075710297}
   m_Layer: 0
   m_Name: Boid
   m_TagString: Untagged
@@ -61,13 +62,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dace8ed85a8cb3429996cff0b3d4413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 90
+  turnSpeed: 135
   avoidanceTurnSpeed: 180
   acceleration: 3
   size: 1.1
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &5405702236075710297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236159836727924889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741a959857c6d4e4a98dd3f3ab58d5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boidRenderer: {fileID: 2932965047753100722}
+  baseColor: {r: 0.5660378, g: 0.4346743, b: 0.45214587, a: 0}
+  changerColor: {r: 1, g: 1, b: 1, a: 0}
+  maxNeighbors: 5
 --- !u!1001 &4571832614022238518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166,6 +183,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 718b7a16782e0d94db200572e44535ad, type: 3}
+--- !u!23 &2932965047753100722 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 718b7a16782e0d94db200572e44535ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 4571832614022238518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4105260820930901725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,

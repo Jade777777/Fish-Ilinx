@@ -16,21 +16,20 @@ public class CameraFollowPlayer : MonoBehaviour
     private float deadzone = 10f;
     [SerializeField]private AnimationCurve deadZoneFallOff;
 
-    // Update is called once per frame
     void Update()
     {
         
 
         Vector3 offset = Target.position - Player.position;
-        
-
         offset = Vector3.ClampMagnitude(offset, maxDistanceFromPlayer);
-        Vector3 cameraFocus = Player.position + offset;
 
+        Vector3 cameraFocus = Player.position + offset;
         Vector3 TargetPosition = cameraFocus + Offset;
-        //if (Vector3.Distance(TargetPosition,transform.position)< deadzone) TargetPosition = transform.position;
+
+        //deadzone
         Vector3 screenOffset = Target.position - transform.position + Offset;
         TargetPosition = Vector3.Lerp(transform.position, TargetPosition, deadZoneFallOff.Evaluate( screenOffset.magnitude/deadzone));
+     
         transform.position = Vector3.SmoothDamp(transform.position, TargetPosition, ref Velocity, SmoothTime,20,Time.deltaTime);
     }
     public void SetTargets(Transform player, Transform target)

@@ -28,8 +28,8 @@ public class PlayerMover : MonoBehaviour
     void Update()
     {
         Vector3 offset = (targetPosition.transform.position - transform.position);
-        float magnitude = 0;
-        magnitude = offset.magnitude-deadzone / smoothDistance;
+        
+        float magnitude = offset.magnitude-deadzone / smoothDistance;
 
         float impactRange = 0.5f;
         Vector3 direction = offset.normalized;
