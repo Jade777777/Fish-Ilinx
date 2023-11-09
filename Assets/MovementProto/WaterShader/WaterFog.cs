@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnderWaterEffect : MonoBehaviour
+public class WaterFog : MonoBehaviour
 {
     [SerializeField] private float WaterLevel;
     private bool IsUnderwater;
