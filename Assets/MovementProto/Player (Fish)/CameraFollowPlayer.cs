@@ -25,6 +25,8 @@ public class CameraFollowPlayer : MonoBehaviour
 
         Vector3 cameraFocus = Player.position + offset;
         Vector3 TargetPosition = cameraFocus + Offset;
+        //Camera stays still on Z axis
+        //Vector3 TargetPosition = new Vector3(cameraFocus.x + Offset.x, cameraFocus.y + Offset.y, transform.position.z);
 
         //deadzone
         Vector3 screenOffset = Target.position - transform.position + Offset;
