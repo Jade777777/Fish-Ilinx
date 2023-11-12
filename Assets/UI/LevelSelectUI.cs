@@ -10,20 +10,12 @@ public class LevelSelectUI : MonoBehaviour
     [SerializeField] Transform levelRoot;
     [SerializeField] GameObject unlockedPrefab;
     [SerializeField] GameObject lockedPrefab;
-    List<int> nums = new List<int>();
 
     void Start()
     {
         // Find game manager and setup event listener
         gameManager = GameObject.FindObjectOfType<GameManager>();
         gameManager.onStateUpdated += UpdateUI;
-
-        // Fill out list
-        for (int i = 0; i < gameManager.GetLevelCount(); i++)
-        {
-            nums.Add(i);
-        }
-
         UpdateUI();
     }
 
@@ -36,24 +28,23 @@ public class LevelSelectUI : MonoBehaviour
         }
 
         // Add the levels -- must use the list compared to iterating
-        foreach (int num in nums)
+        for (int i = 0; i < gameManager.GetLevelCount(); i++)
         {
-            Debug.Log(num);
             // Create the level instance
-            GameObject levelInstance = Instantiate(gameManager.IsLevelUnlocked(num) ? unlockedPrefab : lockedPrefab, levelRoot);
+            GameObject levelInstance = Instantiate(gameManager.IsLevelUnlocked(i) ? unlockedPrefab : lockedPrefab, levelRoot);
 
             // Set text for level & fish count
-            levelInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Level " + num;
-            levelInstance.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = gameManager.GetCollectedFish(num) + "/" + gameManager.GetTotalFish(num);
+            levelInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Level " + i;
+            levelInstance.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = gameManager.GetCollectedFish(i) + "/" + gameManager.GetTotalFish(i);
 
             // Add button
-            if (gameManager.IsLevelUnlocked(num))
+            if (gameManager.IsLevelUnlocked(i))
             {
-                Debug.Log("Set button to " + num);
+                int thisLevel =  i;
                 Button button = levelInstance.GetComponent<Button>();
                 button.onClick.AddListener(() =>
                 {
-                    gameManager.SetCurrentLevel(num, 10); 
+                    gameManager.SetCurrentLevel(thisLevel, 10);
                     gameObject.SetActive(false);
                 });
             }
