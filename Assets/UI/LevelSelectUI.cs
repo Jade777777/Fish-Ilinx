@@ -27,7 +27,7 @@ public class LevelSelectUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Add the levels -- must use the list compared to iterating
+        // Add the levels
         for (int i = 0; i < gameManager.GetLevelCount(); i++)
         {
             // Create the level instance
