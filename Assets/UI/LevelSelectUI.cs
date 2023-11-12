@@ -35,9 +35,8 @@ public class LevelSelectUI : MonoBehaviour
         // Add the levels
         for (int i = 0; i < gameManager.GetLevelCount(); i++)
         {
-            // Create the level and fill out text
+            // Create the level instance
             GameObject levelInstance = Instantiate(gameManager.GetLevelUnlocked(i)? unlockedPrefab : lockedPrefab, levelRoot);
-            Debug.Log(levelInstance.transform.GetChild(0));
 
             // Set text for level & fish count
             levelInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Level " + i;

@@ -22,14 +22,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Initialize arrays
-        totalFish = new int[levels];
         collectedFish = new int[levels];
         isLevelUnlocked = new bool[levels];
 
         // Fill out arrays -- load data later?
         Array.Fill(collectedFish, 0);
-        Array.Fill(totalFish, 60);
-        Array.Fill(isLevelUnlocked, true);
+        Array.Fill(isLevelUnlocked, false);
+        isLevelUnlocked[0] = true;
 
         // Set level and load
         currentLevel = 0;
@@ -84,17 +83,9 @@ public class GameManager : MonoBehaviour
 
     public void ResetValues()
     {
-        // Reset fish collected
-        for (int i = 0; i < collectedFish.Length; i++)
-        {
-            collectedFish[i] = 0;
-        }
-
-        // Reset levels
-        for (int i = 0; i < isLevelUnlocked.Length; i++)
-        {
-            isLevelUnlocked[i] = false;
-        }
+        Array.Fill(collectedFish, 0);
+        Array.Fill(isLevelUnlocked, false);
+        isLevelUnlocked[0] = true;
     }
 
     public void ResetGame()
