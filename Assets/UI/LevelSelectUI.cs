@@ -19,8 +19,9 @@ public class LevelSelectUI : MonoBehaviour
     void Start()
     {
         // Find game manager and setup event listener
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.FindObjectOfType<GameManager>();
         gameManager.onStateUpdated += UpdateUI;
+        UpdateUI();
     }
 
     public void UpdateUI()
@@ -36,7 +37,11 @@ public class LevelSelectUI : MonoBehaviour
         {
             // Create the level and fill out text
             GameObject levelInstance = Instantiate(gameManager.GetLevelUnlocked(i)? unlockedPrefab : lockedPrefab, levelRoot);
-            levelInstance.GetComponent<TextMeshPro>().text = "Level " + (i + 1);
+            Debug.Log(levelInstance.transform.GetChild(0));
+
+            // Set text for level & fish count
+            levelInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Level " + i;
+            levelInstance.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = gameManager.GetCollectedFish(i) + "/" + gameManager.GetTotalFish(i);
         }
     }
 }
