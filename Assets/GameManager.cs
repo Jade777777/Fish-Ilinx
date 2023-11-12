@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(currentLevel);
     }
 
-    public bool GetLevelUnlocked(int level)
+    public bool IsLevelUnlocked(int level)
     {
         return isLevelUnlocked[level];
     }

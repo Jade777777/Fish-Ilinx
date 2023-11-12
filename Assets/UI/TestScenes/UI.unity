@@ -447,6 +447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
+      propertyPath: levels
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
+        type: 3}
       propertyPath: totalFish.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -463,12 +468,12 @@ PrefabInstance:
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
       propertyPath: totalFish.Array.data[2]
-      value: 55
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
       propertyPath: totalFish.Array.data[3]
-      value: 65
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
