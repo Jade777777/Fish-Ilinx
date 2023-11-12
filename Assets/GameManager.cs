@@ -6,15 +6,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    
+    
     [SerializeField] private int levels; // Amount of levels
     private int currentLevel = 0;
     [SerializeField] private int[] totalFish; // Per level
     private int[] collectedFish; // Per level
     private bool[] isLevelUnlocked; // Per level
+    
     public event Action onStateUpdated; // Indicator for UI to update
 
     void Awake()
     {
+        
+        
+        onStateUpdated = () => { };
         // Keep across scenes
         DontDestroyOnLoad(this.gameObject);
 
@@ -25,7 +31,7 @@ public class GameManager : MonoBehaviour
         // Fill out arrays -- load data later?
         Array.Fill(collectedFish, 0);
         Array.Fill(isLevelUnlocked, false);
-        isLevelUnlocked[0] = true;
+        isLevelUnlocked[0] = true;//The first level has a scene index of 2
 
         // Set level
         currentLevel = 0;
@@ -43,38 +49,65 @@ public class GameManager : MonoBehaviour
 
     public int GetCollectedFish(int level)
     {
-        return collectedFish[level];
+        return collectedFish[level-2];
+    }
+    public int GetCollectedFishFromAllLevels()
+    {
+        int total = 0;
+        for (int i = 0; i < levels; i++)
+        {
+            total += collectedFish[i];
+        }
+        return total;
     }
 
     public int GetTotalFish(int level)
     {
-        return totalFish[level];
+        return totalFish[level-2];
     }
 
-    public void SetCurrentLevel(int newLevel, int fishCollected)
+    public void SetCurrentLevel(int newLevel)
     {
         // Update fish collected
-        if (fishCollected != 0)
-        {
-            collectedFish[currentLevel] += fishCollected;
-            onStateUpdated();
-        }
 
         // Change the level
         currentLevel = newLevel;
         SceneManager.LoadScene(currentLevel);
     }
+    public void ReturnToMainMenu()
+    {
+        //We go to a copy of the main menu so that the game manager doesn't get instantiated twice
+        currentLevel = 1;
+        SceneManager.LoadScene(1);
+    }
+    public void SetHighScore(int level, int score)
+    {
+        if (score > collectedFish[currentLevel - 2])
+        {
+            collectedFish[currentLevel-2] = score;
+            onStateUpdated();
+        }
+
+
+        //if (score > PlayerPrefs.GetInt("HighScore" + level.ToString()))
+        //{
+        //    PlayerPrefs.SetInt("HighScore" + level.ToString(), score);
+        //}
+    }
 
     public bool IsLevelUnlocked(int level)
     {
-        return isLevelUnlocked[level];
+        return isLevelUnlocked[level -2];
     }
 
     public void SetLevelUnlocked(int level, bool isUnlocked)
     {
         // Update state if a level gets unlocked
-        if (isLevelUnlocked[level] != isUnlocked) onStateUpdated();
-        isLevelUnlocked[level] = isUnlocked;
+        if (isLevelUnlocked.Length > level-2)
+        {
+            if (isLevelUnlocked[level - 2] != isUnlocked) onStateUpdated();
+            isLevelUnlocked[level - 2] = isUnlocked;
+        }
     }
 
     public void ResetValues()

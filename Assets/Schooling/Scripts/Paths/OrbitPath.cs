@@ -19,4 +19,9 @@ public class OrbitPath : Path
 
         return direction;
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, MaxDistance);
+    }
 }

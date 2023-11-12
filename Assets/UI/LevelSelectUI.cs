@@ -15,7 +15,7 @@ public class LevelSelectUI : MonoBehaviour
     {
         // Find game manager and setup event listener
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        gameManager.onStateUpdated += UpdateUI;
+        //gameManager.onStateUpdated += UpdateUI;
         UpdateUI();
     }
 
@@ -28,14 +28,14 @@ public class LevelSelectUI : MonoBehaviour
         }
 
         // Add the levels
-        for (int i = 0; i < gameManager.GetLevelCount(); i++)
+        for (int i = 2; i < gameManager.GetLevelCount()+2; i++)
         {
             // Create the level instance
             GameObject levelInstance = Instantiate(gameManager.IsLevelUnlocked(i) ? unlockedPrefab : lockedPrefab, levelRoot);
 
             // Set text for level & fish count
-            levelInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Level " + i;
-            levelInstance.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = gameManager.GetCollectedFish(i) + "/" + gameManager.GetTotalFish(i);
+            levelInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Level " + (i-1);
+            levelInstance.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = "" + gameManager.GetCollectedFish(i) + "/" + gameManager.GetTotalFish(i);
 
             // Add button
             if (gameManager.IsLevelUnlocked(i))
@@ -44,7 +44,7 @@ public class LevelSelectUI : MonoBehaviour
                 Button button = levelInstance.GetComponent<Button>();
                 button.onClick.AddListener(() =>
                 {
-                    gameManager.SetCurrentLevel(thisLevel, 10);
+                    gameManager.SetCurrentLevel(thisLevel);
                     gameObject.SetActive(false);
                 });
             }

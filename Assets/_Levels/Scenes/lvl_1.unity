@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2d84477ae4a5da447ada5c5cd61a8b0c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.068863034, g: 0.14921623, b: 0.45084113, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3946,6 +3946,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 82.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5539983590714868001, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 274.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539983590714868001, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.95
+      objectReference: {fileID: 0}
     - target: {fileID: 5840839563816532258, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_Enabled
@@ -4764,12 +4774,12 @@ PrefabInstance:
     - target: {fileID: 39361641270643342, guid: 923cf80a7f955b34d90ac7a21df68893,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.03
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 4487379622340278811, guid: 923cf80a7f955b34d90ac7a21df68893,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.41
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 4950128849664649198, guid: 923cf80a7f955b34d90ac7a21df68893,
         type: 3}
@@ -4781,10 +4791,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 10.37
       objectReference: {fileID: 0}
+    - target: {fileID: 5251805720079330963, guid: 923cf80a7f955b34d90ac7a21df68893,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.38
+      objectReference: {fileID: 0}
     - target: {fileID: 5333300911456656812, guid: 923cf80a7f955b34d90ac7a21df68893,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.88
+      value: 2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516883564479088051, guid: 923cf80a7f955b34d90ac7a21df68893,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226135378371019070, guid: 923cf80a7f955b34d90ac7a21df68893,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226135378371019070, guid: 923cf80a7f955b34d90ac7a21df68893,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.75
       objectReference: {fileID: 0}
     - target: {fileID: 7442734880994863239, guid: 923cf80a7f955b34d90ac7a21df68893,
         type: 3}
@@ -4819,7 +4849,7 @@ PrefabInstance:
     - target: {fileID: 7656440141891470085, guid: 923cf80a7f955b34d90ac7a21df68893,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53
+      value: -50.33
       objectReference: {fileID: 0}
     - target: {fileID: 7656440141891470085, guid: 923cf80a7f955b34d90ac7a21df68893,
         type: 3}
@@ -4857,7 +4887,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2459617319272564455, guid: 923cf80a7f955b34d90ac7a21df68893, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2574380997068882747, guid: 923cf80a7f955b34d90ac7a21df68893,
@@ -5497,7 +5528,8 @@ PrefabInstance:
       value: Border
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7324603666214584910, guid: 2fbfaa956f2cc124ea935236d560f7b5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fbfaa956f2cc124ea935236d560f7b5, type: 3}
