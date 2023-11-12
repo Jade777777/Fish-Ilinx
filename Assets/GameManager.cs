@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         Array.Fill(collectedFish, 0);
         Array.Fill(isLevelUnlocked, false);
         isLevelUnlocked[0] = true;
+        onStateUpdated();
     }
 
     public void ResetGame()
