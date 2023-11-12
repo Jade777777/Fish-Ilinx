@@ -17,10 +17,7 @@ public class GameManager : MonoBehaviour
     {
         // Keep across scenes
         DontDestroyOnLoad(this.gameObject);
-    }
 
-    void Start()
-    {
         // Initialize arrays
         collectedFish = new int[levels];
         isLevelUnlocked = new bool[levels];
@@ -30,9 +27,8 @@ public class GameManager : MonoBehaviour
         Array.Fill(isLevelUnlocked, false);
         isLevelUnlocked[0] = true;
 
-        // Set level and load
+        // Set level
         currentLevel = 0;
-        // SceneManager.LoadScene(currentLevel);
     }
 
     public int GetLevelCount()
