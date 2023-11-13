@@ -5141,6 +5141,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5236,9 +5237,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: -25}
   SmoothTime: 0.5
+  MaxSpeed: 20
   Player: {fileID: 1717483748}
   Target: {fileID: 1904669800}
   maxDistanceFromPlayer: 4
+  deadZoneFallOff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.25144154
+      value: 0.00027891272
+      inSlope: 0.0041573746
+      outSlope: 0.0041573746
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.08207007
+      outWeight: 0.8895488
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5283,6 +5318,21 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f648213b9f4f14c9245be13d10e330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaterLevel: 21.5
+  NormalColor: {r: 1, g: 1, b: 1, a: 0}
+  UnderwaterColor: {r: 0.16340332, g: 0.3413925, b: 0.8490566, a: 0}
 --- !u!1 &1023906887 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7609585099761050052, guid: c6ec71e0cd3098b449f326933b2a506a,
@@ -6720,8 +6770,7 @@ MonoBehaviour:
   viewAngle: 270
   boidMaxSpeed: 9.5
   boidMinSpeed: 7
-  targets:
-  - {fileID: 1904669798}
+  paths: []
   boids: []
   collisionLayer:
     serializedVersion: 2

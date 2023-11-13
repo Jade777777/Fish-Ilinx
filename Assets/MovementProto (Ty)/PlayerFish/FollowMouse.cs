@@ -10,7 +10,6 @@ public class FollowMouse : MonoBehaviour
     [SerializeField] private Camera MainCamera;
     [SerializeField] private LayerMask Background;
     [SerializeField] private LayerMask Deadzone;
-    [SerializeField] private LayerMask Avoidable;
     [SerializeField] private float MovementSpeed;
     
 
