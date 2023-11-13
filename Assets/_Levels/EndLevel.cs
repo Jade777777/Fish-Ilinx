@@ -16,7 +16,7 @@ public class EndLevel : MonoBehaviour
     {
         if (gameObject.GetComponent<Collider>().bounds.Contains(player.position))
         {
-            SavedFishSpawn.savedFish = process.boidGridPartition.GetBoidsInRange(transform.position,range).Count - 1;
+            //SavedFishSpawn.savedFish = process.boidGridPartition.GetBoidsInRange(transform.position,range).Count - 1;
             SceneManager.LoadScene(0);
         }
     }
