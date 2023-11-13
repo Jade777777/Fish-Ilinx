@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class Restart : MonoBehaviour
 {
 
-    Object startScene;
+    int onboardingIndex =0;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SavedFishSpawn.savedFish = 0;
-            SceneManager.LoadScene(0);
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            Destroy(gameManager.gameObject);
+            SceneManager.LoadScene(onboardingIndex);
         }
     }
 }
