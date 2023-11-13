@@ -66,16 +66,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
   smoothDistance: 8
-  maxSpeed: 10
+  maxSpeed: 11
   minSpeed: 2
-  turnSpeed: 135
+  turnSpeed: 95
   avoidanceTurnSpeed: 180
   acceleration: 5
   size: 0.5
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
-  deadzone: 8
+  deadzone: 2
 --- !u!114 &1485230421679887641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,17 +190,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,
         type: 3}
@@ -294,17 +294,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 718b7a16782e0d94db200572e44535ad,
         type: 3}
