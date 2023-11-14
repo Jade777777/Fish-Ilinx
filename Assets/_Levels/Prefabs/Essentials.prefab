@@ -1052,7 +1052,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4a91a58f5c7689042aced2d897db2982, type: 2}
+  - {fileID: 2100000, guid: c7e9a1265f719b241b60ae131691e9e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1806,9 +1806,6 @@ MonoBehaviour:
   Deadzone:
     serializedVersion: 2
     m_Bits: 256
-  Avoidable:
-    serializedVersion: 2
-    m_Bits: 0
   MovementSpeed: 10
 --- !u!135 &6168359884834334055
 SphereCollider:
@@ -1927,7 +1924,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4a91a58f5c7689042aced2d897db2982, type: 2}
+  - {fileID: 2100000, guid: c7e9a1265f719b241b60ae131691e9e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

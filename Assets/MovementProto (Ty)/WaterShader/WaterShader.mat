@@ -64,5 +64,5 @@ Material:
     m_Colors:
     - _DeepWater: {r: 0, g: 0.07209681, b: 0.447, a: 0.8}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0.8}
-    - _ShallowWater: {r: 0, g: 0.57071924, b: 1, a: 0.2509804}
+    - _ShallowWater: {r: 0, g: 0.35799217, b: 1, a: 0.2509804}
   m_BuildTextureStacks: []
