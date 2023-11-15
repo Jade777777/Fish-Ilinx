@@ -581,7 +581,7 @@ MonoBehaviour:
   avoidanceRange: 2
   viewAngle: 270
   boidMaxSpeed: 11.5
-  boidMinSpeed: 7
+  boidMinSpeed: 2
   paths: []
   boids: []
   collisionLayer:
