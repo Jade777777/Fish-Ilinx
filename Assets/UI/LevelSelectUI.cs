@@ -33,13 +33,15 @@ public class LevelSelectUI : MonoBehaviour
             // Create the level instance
             GameObject levelInstance = Instantiate(gameManager.IsLevelUnlocked(i) ? unlockedPrefab : lockedPrefab, levelRoot);
 
-            // Set text for level & fish count
+            // Set text for level
             levelInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Level " + (i-1);
-            levelInstance.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = "" + gameManager.GetCollectedFish(i) + "/" + gameManager.GetTotalFish(i);
 
-            // Add button
             if (gameManager.IsLevelUnlocked(i))
             {
+                // Set text for fish count
+                levelInstance.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = "" + gameManager.GetCollectedFish(i) + "/" + gameManager.GetTotalFish(i);
+
+                // Add button
                 int thisLevel =  i;
                 Button button = levelInstance.GetComponent<Button>();
                 button.onClick.AddListener(() =>

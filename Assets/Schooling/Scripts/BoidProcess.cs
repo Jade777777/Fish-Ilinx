@@ -50,14 +50,15 @@ public class BoidProcess : MonoBehaviour
         }
         foreach(Boid boid in boids)
         {
-            Vector3 newVelocity = Vector3.zero;
+            Vector3 newVelocity = boid.CurrentVelocity;
+
             newVelocity += AlignmentRule(boid)*0.2f;//TODO: Velocity is not being matched properly
             newVelocity += CohesionRule(boid)*0.3f;
             newVelocity += AvoidanceRule(boid)*5f;
             //newVelocity += ObstacleAvoidanceRule(boid)*10f;//this should be checking and limiting the overall movement rather than
             newVelocity += PathingRule(boid)*1f;
             newVelocity += BoundsRule(boid)*10f;
-            boid.TargetVelocity = Vector3.ClampMagnitude(newVelocity+ boid.CurrentVelocity, boidMaxSpeed);   //
+            boid.TargetVelocity = Vector3.ClampMagnitude(newVelocity, boidMaxSpeed);   //
             
             if (boid.TargetVelocity.magnitude < boidMinSpeed)
             {
