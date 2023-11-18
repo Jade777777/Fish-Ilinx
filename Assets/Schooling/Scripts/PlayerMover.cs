@@ -23,7 +23,6 @@ public class PlayerMover : MonoBehaviour
     private void Start()
     {
         boid = GetComponent<Boid>();
-        
     }
     void Update()
     {

@@ -16,17 +16,26 @@ public class CameraFollowPlayer : MonoBehaviour
     private float deadzone = 10f;
     [SerializeField]private AnimationCurve deadZoneFallOff;
 
+    public bool boundedX;
+    public bool boundedY;
+    public float boundYPos;
+
     void Update()
     {
-        
-
         Vector3 offset = Target.position - Player.position;
         offset = Vector3.ClampMagnitude(offset, maxDistanceFromPlayer);
 
         Vector3 cameraFocus = Player.position + offset;
-        Vector3 TargetPosition = cameraFocus + Offset;
+
+        float posX = cameraFocus.x + Offset.x;
+        float posY = cameraFocus.y + Offset.y;
+
+        if (boundedX) posX = this.transform.position.x;
+        if (boundedY) posY = boundYPos; //Moves to y position of bounding box if effeect feels off use this.transform.position.y;
+
+        Vector3 TargetPosition = new Vector3(posX, posY, cameraFocus.z + Offset.z);
         //Camera stays still on Z axis
-        //Vector3 TargetPosition = new Vector3(cameraFocus.x + Offset.x, cameraFocus.y + Offset.y, transform.position.z);
+        //new Vector3(posX, posY, transform.position.z);
 
         //deadzone
         Vector3 screenOffset = Target.position - transform.position + Offset;
@@ -39,5 +48,4 @@ public class CameraFollowPlayer : MonoBehaviour
         Player = player;
         Target = target;
     }
-
 }
