@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Deadzone
+  - CameraBoundsX
+  - CameraBoundsY
   layers:
   - Default
   - TransparentFX

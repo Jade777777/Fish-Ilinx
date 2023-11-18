@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_Levels/_Menu/Menu.unity
     guid: a15d52cd4009b3d4d9a34d6f35d004db
   - enabled: 1
-    path: Assets/_Levels/Scenes/lvl_1.unity
+    path: Assets/_Levels/Scenes/Seaweed 1.unity
     guid: e14d451ad1c2c804cac42f44422905eb
   - enabled: 1
     path: Assets/_Levels/TestLevels/Test Level.unity
