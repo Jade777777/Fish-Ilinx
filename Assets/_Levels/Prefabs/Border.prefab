@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 5168048299108189685}
   - component: {fileID: 4890507648647437508}
   - component: {fileID: 2560776399997994360}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ Transform:
   - {fileID: 4111976502624098466}
   - {fileID: 898111712980485123}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6876839892417050388
 GameObject:
