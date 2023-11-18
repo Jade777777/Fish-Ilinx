@@ -2723,7 +2723,7 @@ PrefabInstance:
     - target: {fileID: 1137802204658422490, guid: d0574d6184633824ca9550b7d5dea152,
         type: 3}
       propertyPath: SpawnAmount
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1137802204658422490, guid: d0574d6184633824ca9550b7d5dea152,
         type: 3}
@@ -3926,7 +3926,7 @@ PrefabInstance:
     - target: {fileID: 4753451476919676845, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: SpawnAmount
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4753451476919676845, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
