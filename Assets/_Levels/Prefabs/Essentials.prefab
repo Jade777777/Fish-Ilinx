@@ -577,8 +577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundCollider: {fileID: 1282066145746335707}
   boundFallOffDistance: 1
-  boidRange: 3
-  avoidanceRange: 2
+  boidRange: 3.5
+  avoidanceRange: 2.5
   viewAngle: 270
   boidMaxSpeed: 11.5
   boidMinSpeed: 2
