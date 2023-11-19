@@ -80,6 +80,8 @@ MonoBehaviour:
   deadzone: 2
   sinusoidalMagnitude: 20
   sinusoidalFrequency: 5
+  minFOV: 55
+  maxFOV: 60
 --- !u!114 &1485230421679887641
 MonoBehaviour:
   m_ObjectHideFlags: 0

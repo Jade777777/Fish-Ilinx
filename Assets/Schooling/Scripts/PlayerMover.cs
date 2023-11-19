@@ -23,6 +23,10 @@ public class PlayerMover : MonoBehaviour
     private Boid boid;
 
 
+    [SerializeField] private float minFOV = 55;
+    [SerializeField] private float maxFOV = 60;
+    private float fovVelocity = 0f;
+
     private void Start()
     {
         boid = GetComponent<Boid>();
@@ -42,7 +46,8 @@ public class PlayerMover : MonoBehaviour
         direction = Vector3.Slerp(direction, avoidance, avoidanceWeight);
 
         Vector3 targetVelocity = direction.normalized * Mathf.Lerp(minSpeed, maxSpeed, magnitude);
-        
+        float targetFOV = Mathf.Lerp(minFOV, maxFOV, magnitude);
+        Camera.main.fieldOfView = Mathf.SmoothDamp(Camera.main.fieldOfView, targetFOV, ref fovVelocity, 0.8f, 5, Time.deltaTime);
 
         float deltaRadians = Mathf.Lerp(Mathf.Deg2Rad * Time.deltaTime * turnSpeed,Mathf.Deg2Rad*Time.deltaTime*avoidanceTurnSpeed ,avoidanceWeight );//Mathf.Pow(avoidance.magnitude,2)
         boid.CurrentVelocity = Vector3.RotateTowards(boid.CurrentVelocity, targetVelocity ,deltaRadians , acceleration * Time.deltaTime);

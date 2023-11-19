@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: -25}
-  SmoothTime: 0.5
-  MaxSpeed: 20
+  SmoothTime: 0.25
+  MaxSpeed: 40
   Player: {fileID: 8921347974062447589}
   Target: {fileID: 5734721358982108112}
   maxDistanceFromPlayer: 4
