@@ -2077,16 +2077,16 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1223055333295434619}
+  - {fileID: 8921347974062447589}
   - {fileID: 4469922530563604767}
   - {fileID: 5010725992581042123}
-  - {fileID: 8921347974062447589}
   - {fileID: 5734721358982108112}
   - {fileID: 4794730046213329029}
   - {fileID: 7645760303309239097}
+  - {fileID: 6369711889206459853}
   - {fileID: 1725993311302527571}
   - {fileID: 4396697090102080391}
   - {fileID: 8341711452131957590}
-  - {fileID: 6369711889206459853}
   - {fileID: 7792532573131714277}
   - {fileID: 1197457764086529031}
   - {fileID: 7849414764675032540}
@@ -3327,10 +3327,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4075613090215349726}
     m_Modifications:
+    - target: {fileID: 1625864373551405739, guid: 2fbfaa956f2cc124ea935236d560f7b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2616419540472224369, guid: 2fbfaa956f2cc124ea935236d560f7b5,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2616419540472224369, guid: 2fbfaa956f2cc124ea935236d560f7b5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2616419540472224369, guid: 2fbfaa956f2cc124ea935236d560f7b5,
         type: 3}
@@ -3381,6 +3391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214941007385394589, guid: 2fbfaa956f2cc124ea935236d560f7b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6662018751249348281, guid: 2fbfaa956f2cc124ea935236d560f7b5,
         type: 3}
