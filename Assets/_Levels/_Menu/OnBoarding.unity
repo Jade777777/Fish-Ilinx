@@ -446,6 +446,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 9.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7054429196232268988, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: sinusoidalFrequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054429196232268988, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: sinusoidalMagnitude
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7849414764675032540, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_LocalPosition.x

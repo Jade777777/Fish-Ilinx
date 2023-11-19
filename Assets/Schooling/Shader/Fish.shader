@@ -12,6 +12,7 @@
 Shader "Custom/FishAnimation" {
 	Properties{
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_Color ("Color", Color) = (1,1,1,1)
 		_SpeedX("SpeedX", Range(0, 10)) = 1
 		_FrequencyX("FrequencyX", Range(0, 10)) = 1
 		_AmplitudeX("AmplitudeX", Range(0, 0.2)) = 1
@@ -22,6 +23,7 @@ Shader "Custom/FishAnimation" {
 		_FrequencyZ("FrequencyZ", Range(0, 10)) = 1
 		_AmplitudeZ("AmplitudeZ", Range(0,  2)) = 1
 		_HeadLimit("HeadLimit", Range(-2,  2)) = 0.05
+		_TimeOffset("TimeOffset", Range(0,  5)) = 1
 	}
 		SubShader{
 		Tags{ "RenderType" = "Opaque" }
@@ -37,11 +39,14 @@ Shader "Custom/FishAnimation" {
 	sampler2D _MainTex;
 	float4 _MainTex_ST;
 
+
 	struct v2f {
 		float4 pos : SV_POSITION;
 		float2 uv : TEXCOORD0;
 	};
 	
+	fixed4 _Color;
+
 	// X AXIS
 
 	float _SpeedX;
@@ -64,28 +69,30 @@ Shader "Custom/FishAnimation" {
 	
 	float _HeadLimit;
 
+	float _TimeOffset;
+
 	v2f vert(appdata_base v)
 	{
 		v2f o;
 
 		//Z AXIS
 
-		v.vertex.z += sin((v.vertex.z + _Time.y * _SpeedX) * _FrequencyX)* _AmplitudeX;		
+    v.vertex.z += sin((v.vertex.z + (_Time.y + _TimeOffset) * _SpeedX) * _FrequencyX) * _AmplitudeX;
 
 		//Y AXIS
 
-		v.vertex.y += sin((v.vertex.z + _Time.y * _SpeedY) * _FrequencyY)* _AmplitudeY;
+    v.vertex.y += sin((v.vertex.z + (_Time.y + _TimeOffset) * _SpeedY) * _FrequencyY) * _AmplitudeY;
 
 		//X AXIS
 
 		if (v.vertex.z > _HeadLimit)
 		{
-			v.vertex.x += sin((0.05 + _Time.y * _SpeedZ) * _FrequencyZ)* _AmplitudeZ * _HeadLimit;
-		}
+        v.vertex.x += sin((0.05 + (_Time.y + _TimeOffset) * _SpeedZ) * _FrequencyZ) * _AmplitudeZ * _HeadLimit;
+    }
 		else
 		{
-			v.vertex.x += sin((v.vertex.z + _Time.y * _SpeedZ) * _FrequencyZ)* _AmplitudeZ * v.vertex.z;
-		}
+        v.vertex.x += sin((v.vertex.z + (_Time.y + _TimeOffset) * _SpeedZ) * _FrequencyZ) * _AmplitudeZ * v.vertex.z;
+    }
 
 
 		o.pos = UnityObjectToClipPos(v.vertex);
@@ -96,7 +103,9 @@ Shader "Custom/FishAnimation" {
 
 	fixed4 frag(v2f i) : SV_Target
 	{
-		return tex2D(_MainTex, i.uv);
+		return tex2D(_MainTex, i.uv) * _Color;
+		
+		
 	}
 
 		ENDCG
