@@ -9,7 +9,7 @@ public class CameraBounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (cameraScript == null) cameraScript = this.GetComponentInParent<CameraFollowPlayer>();
+        if (cameraScript == null) cameraScript = this.transform.parent.GetComponentInChildren<CameraFollowPlayer>();
     }
 
     void OnTriggerEnter(Collider other)

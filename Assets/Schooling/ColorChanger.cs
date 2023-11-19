@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ColorChanger : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class ColorChanger : MonoBehaviour
     private void Start()
     {
         boid = GetComponent<Boid>();
+
+        boidRenderer.sharedMaterial.SetFloat("_TimeOffset", Random.Range(0f,5f));
+        Debug.Log(boidRenderer.sharedMaterial.GetFloat("_TimeOffset"));
     }
     void Update()
     {

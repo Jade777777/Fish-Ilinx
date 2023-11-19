@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -17,12 +18,15 @@ public class PlayerMover : MonoBehaviour
 
     public float deadzone = 8f;
 
+    public float sinusoidalMagnitude=1f;
+    public float sinusoidalFrequency = 5;
     private Boid boid;
 
 
     private void Start()
     {
         boid = GetComponent<Boid>();
+        
     }
     void Update()
     {
@@ -31,7 +35,7 @@ public class PlayerMover : MonoBehaviour
         float magnitude = (offset.magnitude-deadzone) / smoothDistance;
 
         float impactRange = 0.5f;
-        Vector3 direction = offset.normalized;
+        Vector3 direction = offset.normalized + (transform.up * Mathf.Sin(Time.time*sinusoidalFrequency) * sinusoidalMagnitude*Time.deltaTime);
         AvoidObstacles(out Vector3 avoidance, out float obstacleDistance);
 
         float avoidanceWeight = Mathf.Pow(Mathf.Clamp(avoidance.magnitude, 0, 1 - impactRange) / (1 - impactRange), 2);
@@ -66,8 +70,22 @@ public class PlayerMover : MonoBehaviour
 
 
         transform.position += (boid.CurrentVelocity * Time.deltaTime);
-        if (boid.CurrentVelocity != Vector3.zero) transform.forward = boid.CurrentVelocity;
+
+        if (boid.CurrentVelocity != Vector3.zero)
+        {
+            Vector3 targetDirection = boid.CurrentVelocity.normalized;
+            
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+           
+            transform.rotation = Quaternion.RotateTowards( transform.rotation,targetRotation, 480 * Time.deltaTime);
+
+
+
+            
+        }
+
     }
+  
 
 
 
