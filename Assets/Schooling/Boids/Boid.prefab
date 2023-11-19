@@ -69,6 +69,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
+  sinusoidalFrequency: 5
 --- !u!114 &5405702236075710297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidRenderer: {fileID: 4189975117369672610}
-  baseColor: {r: 0.5660378, g: 0.4346743, b: 0.45214587, a: 0}
+  baseColor: {r: 0.38431373, g: 0.4346743, b: 0.49803922, a: 1}
   changerColor: {r: 1, g: 1, b: 1, a: 0}
   maxNeighbors: 5
 --- !u!1001 &3306870876538478374

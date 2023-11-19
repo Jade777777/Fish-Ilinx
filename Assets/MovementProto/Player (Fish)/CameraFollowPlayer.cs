@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.MPE;
 using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour
@@ -16,13 +17,18 @@ public class CameraFollowPlayer : MonoBehaviour
     private float deadzone = 10f;
     [SerializeField]private AnimationCurve deadZoneFallOff;
 
-    public bool boundedX;
-    public bool boundedY;
+
+
+    [HideInInspector] public bool boundedX;
+    [HideInInspector] public bool boundedY;
     public float boundYPos;
 
     void Update()
     {
+        
         Vector3 offset = Target.position - Player.position;
+        //prevent player from sliding allong terrain
+
         offset = Vector3.ClampMagnitude(offset, maxDistanceFromPlayer);
 
         Vector3 cameraFocus = Player.position + offset;
