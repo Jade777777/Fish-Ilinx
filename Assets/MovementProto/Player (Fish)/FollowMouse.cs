@@ -7,21 +7,14 @@ using UnityEngine.Rendering;
 
 public class FollowMouse : MonoBehaviour
 {
-    [SerializeField] private Camera MainCamera;
-    [SerializeField] private LayerMask Background;
-    [SerializeField] private LayerMask Deadzone;
-    [SerializeField] private LayerMask Avoidable;
-    [SerializeField] private float MovementSpeed;
-    
+    public LayerMask collisionLayer;
 
-    Rigidbody Rb;
-    bool CanMove;
-
-
+    private Camera mainCamera;
+    Transform player;
     private void Start()
     {
-        Rb = GetComponent<Rigidbody>();
-        CanMove = true;
+        mainCamera= Camera.main;
+        player = FindObjectOfType<PlayerMover>().transform;
     }
 
     // Update is called once per frame
@@ -33,42 +26,27 @@ public class FollowMouse : MonoBehaviour
     void FollowM()
     {
         // Get the mouse postion from the camera to move the player (Fish)
-        Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Plane movementPlane = new Plane(Vector3.forward, Vector3.zero);
 
-        if (Physics.Raycast(ray, out RaycastHit raycasthit, float.MaxValue, Background) && CanMove == true)
+        if (movementPlane.Raycast(ray, out float enter))
         {
-            //transform.position = Vector3.MoveTowards(transform.position, raycasthit.point, Time.deltaTime * MovementSpeed);
-            transform.position = raycasthit.point;
-            transform.LookAt(new Vector3(raycasthit.point.x, raycasthit.point.y, transform.position.z));
+            Vector3 targetPoint = ray.GetPoint(enter);
+
+            Vector3 offset = targetPoint- player.position ;
+            if (Physics.Raycast(player.position, offset, out RaycastHit hit, offset.magnitude,collisionLayer))
+            {
+                targetPoint = movementPlane.ClosestPointOnPlane(hit.point);
+            }
+
+            transform.position = targetPoint;
+            
         }
-
-        // Controls the Deadzone of the player (Fish)
-        if (Physics.Raycast(ray, out raycasthit, float.MaxValue, Deadzone))
-        {
-            CanMove = false;
-            transform.LookAt(new Vector3(raycasthit.point.x, raycasthit.point.y, transform.position.z));
-        }
-        else
-        {
-            CanMove = true;
-        }
-
-
-        //Plane movementPlane = new Plane(Vector3.forward, Vector3.zero);
-
-        //if(movementPlane.Raycast(ray, out float enter))
-        //{
-        //    Vector3 hitPoint = ray.GetPoint(enter);
-        //    Vector3 offset = hitPoint - transform.position;
-        //    Rb.Move(transform.position + offset.normalized * MovementSpeed * Time.deltaTime,Quaternion.LookRotation(offset,Vector3.up));
-        //    Debug.Log(offset);
-        //}
 
     }
-
-
-    private void FixedUpdate()
+    private void OnDrawGizmos()
     {
-
+        Gizmos.color = Color.white;
+        Gizmos.DrawSphere(transform.position, 0.5f);
     }
 }

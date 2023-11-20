@@ -4077,7 +4077,11 @@ PrefabInstance:
       value: Essentials
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6705602726207728794, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+    - {fileID: 5741012400117909268, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+    - {fileID: 9073935704414181415, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+    - {fileID: 6822057863878676813, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4396697090102080391, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
