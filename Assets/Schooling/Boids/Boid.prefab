@@ -50,6 +50,7 @@ MonoBehaviour:
   TargetVelocity: {x: 0, y: 0, z: 1}
   CurrentVelocity: {x: 0, y: 0, z: 0}
   neighbors: []
+  isPathing: 0
 --- !u!114 &4633306146376876325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +86,9 @@ MonoBehaviour:
   boidRenderer: {fileID: 4189975117369672610}
   baseColor: {r: 0.38431373, g: 0.4346743, b: 0.49803922, a: 1}
   changerColor: {r: 1, g: 1, b: 1, a: 0}
+  pathingColor: {r: 1, g: 1, b: 1, a: 0}
   maxNeighbors: 5
+  pathingWeight: 0.35
 --- !u!1001 &3306870876538478374
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -129,10 +129,16 @@ public class BoidProcess : MonoBehaviour
 
     public Vector3 PathingRule(Boid boid) // add different types of pathing behaviours
     {
+        boid.isPathing = false;
         Vector3 direction = Vector3.zero;
         foreach(Path path in paths)
         {
             direction += path.Evaluate(boid);
+
+        }
+        if(direction.magnitude > 0)
+        {
+            boid.isPathing=true;
         }
         return direction;
     }
