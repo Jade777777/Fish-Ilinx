@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEditor.MPE;
 using UnityEngine;
 
@@ -26,7 +27,6 @@ public class CameraFollowPlayer : MonoBehaviour
 
     void Update()
     {
-        
         Vector3 offset = Target.position - Player.position;
         //prevent player from sliding allong terrain
 

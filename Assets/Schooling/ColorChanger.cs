@@ -16,7 +16,6 @@ public class ColorChanger : MonoBehaviour
         boid = GetComponent<Boid>();
 
         boidRenderer.sharedMaterial.SetFloat("_TimeOffset", Random.Range(0f,5f));
-        Debug.Log(boidRenderer.sharedMaterial.GetFloat("_TimeOffset"));
     }
     void Update()
     {
