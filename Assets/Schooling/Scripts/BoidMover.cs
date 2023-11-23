@@ -12,7 +12,7 @@ public class BoidMover : MonoBehaviour
     public float size=0.5f;
     public LayerMask collisionLayer;
 
-    float sinusoidalMagnitude = 1f;
+    float sinusoidalMagnitude = 0.01f;
     public float sinusoidalFrequency = 5;
 
     private Boid boid;
@@ -26,7 +26,7 @@ public class BoidMover : MonoBehaviour
     void Update()
     {
         float impactRange = 0.5f;
-        Vector3 direction = boid.TargetVelocity.normalized + (transform.up * Mathf.Sin(Time.time * sinusoidalFrequency+sinOffset) * sinusoidalMagnitude*Time.deltaTime); ;
+        Vector3 direction = boid.TargetVelocity.normalized + (transform.up * Mathf.Sin(Time.time * sinusoidalFrequency+sinOffset) * sinusoidalMagnitude); ;
         AvoidObstacles(out Vector3 avoidance, out float obstacleDistance);
 
         float avoidanceWeight = Mathf.Pow(Mathf.Clamp(avoidance.magnitude, 0, 1 - impactRange) / (1 - impactRange), 2);
