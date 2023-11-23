@@ -18,7 +18,7 @@ public class PlayerMover : MonoBehaviour
 
     public float deadzone = 8f;
 
-    public float sinusoidalMagnitude=1f;
+    float sinusoidalMagnitude=0.1f;
     public float sinusoidalFrequency = 5;
     private Boid boid;
 
@@ -39,7 +39,7 @@ public class PlayerMover : MonoBehaviour
         float magnitude = (offset.magnitude-deadzone) / smoothDistance;
 
         float impactRange = 0.5f;
-        Vector3 direction = offset.normalized + (transform.up * Mathf.Sin(Time.time*sinusoidalFrequency) * sinusoidalMagnitude*Time.deltaTime);
+        Vector3 direction = offset.normalized + (transform.up * Mathf.Sin(Time.time*sinusoidalFrequency) * sinusoidalMagnitude);
         AvoidObstacles(out Vector3 avoidance, out float obstacleDistance);
 
         float avoidanceWeight = Mathf.Pow(Mathf.Clamp(avoidance.magnitude, 0, 1 - impactRange) / (1 - impactRange), 2);

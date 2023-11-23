@@ -84,9 +84,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidRenderer: {fileID: 4189975117369672610}
-  baseColor: {r: 0.38431373, g: 0.4346743, b: 0.49803922, a: 1}
-  changerColor: {r: 1, g: 1, b: 1, a: 0}
-  pathingColor: {r: 1, g: 1, b: 1, a: 0}
+  baseColor: {r: 0.40392157, g: 0.5017657, b: 0.76862746, a: 1}
+  changerColor: {r: 1, g: 1, b: 1, a: 1}
+  pathingColor: {r: 1, g: 1, b: 1, a: 1}
   maxNeighbors: 5
   pathingWeight: 0.35
 --- !u!1001 &3306870876538478374
