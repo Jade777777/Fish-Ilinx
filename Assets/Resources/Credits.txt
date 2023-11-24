@@ -1,0 +1,24 @@
+!Gameplay Programmers
+Jared Gorodkin
+Tyare Daniels
+Tessla Muir
+
+!UI Design/Programing
+Tessla Muir
+
+!Level Design
+James Zilberman
+
+!Assets
+Fish - Tessla Muir
+
+!Art
+Logo - James Zilberman
+
+!Graphics Programming
+Tyare Daniels
+
+!Gameplay Programmers
+Tyare Daniels
+Jared Gorodkin
+Tessla Muir
