@@ -17,20 +17,28 @@ public class CreditsHandler : MonoBehaviour
     [SerializeField] private Color nameColor = Color.white;
     [SerializeField] private int headerSize = 35;
     [SerializeField] private int nameSize = 25;
+    [SerializeField] Scrollbar scrollbar;
+    [SerializeField] private float scrollSpeed = 0.1f;
+    private bool isDragging = false;
+
 
     List<string> headers = new List<string>();
     List<List<string>> titles = new List<List<string>>();
     List<GameObject> creditsTexts = new List<GameObject>();
 
-    
+    public void SetIsDragging(bool val)
+    {
+        isDragging = val;
+    }
+
     public void Awake()
     {
         // Read in from credits list
         bool newStart = false;
         TextAsset theList = (TextAsset)Resources.Load(fileName, typeof(TextAsset));
         string[] linesFromfile = theList.text.Split("\n"[0]);
-        foreach(string line in linesFromfile)
-        { 
+        foreach (string line in linesFromfile)
+        {
             string firstCharacter = line.Substring(0, 1);
             bool isIgnore = firstCharacter.Equals("#");
             bool isHeader = firstCharacter.Equals("!");
@@ -73,8 +81,10 @@ public class CreditsHandler : MonoBehaviour
                 oObj.transform.localPosition = new Vector3(0f, 0f, 0f);
                 creditsTexts.Add(oObj);
             }
-
         }
+
+        // Set the scrollbar to start
+        scrollbar.value = 1f;
     }
 
     public GameObject newText(string labelText, bool isHeader)
@@ -101,9 +111,15 @@ public class CreditsHandler : MonoBehaviour
         return textObj;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (!isDragging)
+        {
+            // Gradually scroll down
+            scrollbar.value -= scrollSpeed * Time.deltaTime;
 
+            // Clamp value between 0 and 1
+            scrollbar.value = Mathf.Clamp01(scrollbar.value);
+        }
     }
 }
