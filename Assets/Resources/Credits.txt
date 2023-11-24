@@ -16,7 +16,7 @@ Tessla Muir
 !Graphics Programming
 Tyare Daniels
 
-!UI Design/Programing
+!UI Design/Programming
 Tessla Muir
 
 !Level Design
