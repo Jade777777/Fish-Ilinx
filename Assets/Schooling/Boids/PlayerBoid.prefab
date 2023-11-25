@@ -80,7 +80,7 @@ MonoBehaviour:
     m_Bits: 1
   deadzone: 2
   sinusoidalFrequency: 5
-  minFOV: 55
+  minFOV: 45
   maxFOV: 60
 --- !u!114 &1485230421679887641
 MonoBehaviour:

@@ -10,15 +10,18 @@ public class LevelSelectUI : MonoBehaviour
     [SerializeField] Transform levelRoot;
     [SerializeField] GameObject unlockedPrefab;
     [SerializeField] GameObject lockedPrefab;
+    TransitionToLevel transitionToLevel;
 
+    int nextLevel; 
     void Start()
     {
         // Find game manager and setup event listener
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        transitionToLevel = FindObjectOfType<TransitionToLevel>();
         //gameManager.onStateUpdated += UpdateUI;
         UpdateUI();
     }
-
+    
     public void UpdateUI()
     {
         // Empty the level root
@@ -46,10 +49,17 @@ public class LevelSelectUI : MonoBehaviour
                 Button button = levelInstance.GetComponent<Button>();
                 button.onClick.AddListener(() =>
                 {
-                    gameManager.SetCurrentLevel(thisLevel);
+                    nextLevel = thisLevel;
+                    transitionToLevel.SetUpMenuTransition();
+                    Invoke( "SetCurrentLevel", 0.8f);
                     gameObject.SetActive(false);
                 });
             }
         }
+    }
+
+    public void SetCurrentLevel()
+    {
+        gameManager.SetCurrentLevel(nextLevel);
     }
 }

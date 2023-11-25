@@ -27,10 +27,16 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float maxFOV = 60;
     private float fovVelocity = 0f;
 
+    
+
     private void Start()
     {
         boid = GetComponent<Boid>();
-        
+        Invoke("ActivateFollowCamera",4f);
+    }
+    public void ActivateFollowCamera()
+    {
+        FindObjectOfType<CameraFollowPlayer>().pauseCameraUpdates = false;
     }
     void Update()
     {
@@ -46,9 +52,17 @@ public class PlayerMover : MonoBehaviour
         direction = Vector3.Slerp(direction, avoidance, avoidanceWeight);
 
         Vector3 targetVelocity = direction.normalized * Mathf.Lerp(minSpeed, maxSpeed, magnitude);
-        float targetFOV = Mathf.Lerp(minFOV, maxFOV, magnitude);
-        Camera.main.fieldOfView = Mathf.SmoothDamp(Camera.main.fieldOfView, targetFOV, ref fovVelocity, 2f, 5, Time.deltaTime);
 
+        if (FindObjectOfType<CameraFollowPlayer>().IsFollowingPlayer())
+        {
+            float targetFOV = Mathf.Lerp(minFOV, maxFOV, magnitude);
+
+            Camera.main.fieldOfView = Mathf.SmoothDamp(Camera.main.fieldOfView, targetFOV, ref fovVelocity, 1f, 5f, Time.deltaTime);
+        }
+        else
+        {
+            Camera.main.fieldOfView = Mathf.SmoothDamp(Camera.main.fieldOfView, maxFOV, ref fovVelocity, 1f, 5f, Time.deltaTime);
+        }
         float deltaRadians = Mathf.Lerp(Mathf.Deg2Rad * Time.deltaTime * turnSpeed,Mathf.Deg2Rad*Time.deltaTime*avoidanceTurnSpeed ,avoidanceWeight );//Mathf.Pow(avoidance.magnitude,2)
         boid.CurrentVelocity = Vector3.RotateTowards(boid.CurrentVelocity, targetVelocity ,deltaRadians , acceleration * Time.deltaTime);
 
