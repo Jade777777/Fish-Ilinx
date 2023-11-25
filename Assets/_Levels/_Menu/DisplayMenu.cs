@@ -20,6 +20,7 @@ public class DisplayMenu : MonoBehaviour
         {
             cameraController.SetTargets(cameraTarget, cameraTarget);
             menu.SetActive(true);
+            this.enabled = false;
         }
     }
 }

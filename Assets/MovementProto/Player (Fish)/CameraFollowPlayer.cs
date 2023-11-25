@@ -23,31 +23,37 @@ public class CameraFollowPlayer : MonoBehaviour
     [HideInInspector] public bool boundedY;
     public float boundYPos;
 
+
+    [HideInInspector]public bool pauseCameraUpdates = true;
+
     void Update()
     {
-        Vector3 offset = Target.position - Player.position;
-        //prevent player from sliding allong terrain
+        if (!pauseCameraUpdates)
+        {
+            Vector3 offset = Target.position - Player.position;
+            //prevent player from sliding allong terrain
 
-        offset = Vector3.ClampMagnitude(offset, maxDistanceFromPlayer);
+            offset = Vector3.ClampMagnitude(offset, maxDistanceFromPlayer);
 
-        Vector3 cameraFocus = Player.position + offset;
+            Vector3 cameraFocus = Player.position + offset;
 
-        float posX = cameraFocus.x + Offset.x;
-        float posY = cameraFocus.y + Offset.y;
+            float posX = cameraFocus.x + Offset.x;
+            float posY = cameraFocus.y + Offset.y;
 
-        if (boundedX) posX = this.transform.position.x;
-        if (boundedY) posY = boundYPos; //Moves to y position of bounding box if effeect feels off use this.transform.position.y;
+            if (boundedX) posX = this.transform.position.x;
+            if (boundedY) posY = boundYPos; //Moves to y position of bounding box if effeect feels off use this.transform.position.y;
 
-        Vector3 TargetPosition = new Vector3(posX, posY, cameraFocus.z + Offset.z);
-        //Camera stays still on Z axis
-        //new Vector3(posX, posY, transform.position.z);
+            Vector3 TargetPosition = new Vector3(posX, posY, cameraFocus.z + Offset.z);
+            //Camera stays still on Z axis
+            //new Vector3(posX, posY, transform.position.z);
 
-        //deadzone
-        Vector3 screenOffset = Target.position - transform.position + Offset;
+            //deadzone
+            Vector3 screenOffset = Target.position - transform.position + Offset;
 
-        TargetPosition = Vector3.Lerp(transform.position, TargetPosition, deadZoneFallOff.Evaluate( screenOffset.magnitude/deadzone));
+            TargetPosition = Vector3.Lerp(transform.position, TargetPosition, deadZoneFallOff.Evaluate(screenOffset.magnitude / deadzone));
 
-        transform.position = Vector3.SmoothDamp(transform.position, TargetPosition, ref cameraVelocity, SmoothTime,20,Time.deltaTime);
+            transform.position = Vector3.SmoothDamp(transform.position, TargetPosition, ref cameraVelocity, SmoothTime, MaxSpeed, Time.deltaTime);
+        }
     }
     public void SetTargets(Transform player, Transform target)
     {
