@@ -376,6 +376,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3408112310233636342, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: pauseCameraUpdates
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4075613090215349726, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_RootOrder

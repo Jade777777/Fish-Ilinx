@@ -51,7 +51,7 @@ public class LevelSelectUI : MonoBehaviour
                 {
                     nextLevel = thisLevel;
                     transitionToLevel.SetUpMenuTransition();
-                    Invoke( "SetCurrentLevel", 5f);
+                    Invoke( "SetCurrentLevel", 0.8f);
                     gameObject.SetActive(false);
                 });
             }

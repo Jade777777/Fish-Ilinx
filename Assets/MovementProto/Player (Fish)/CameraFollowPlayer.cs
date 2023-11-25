@@ -24,7 +24,7 @@ public class CameraFollowPlayer : MonoBehaviour
     public float boundYPos;
 
 
-    [HideInInspector]public bool pauseCameraUpdates = true;
+    public bool pauseCameraUpdates = true;
 
     void Update()
     {
@@ -59,5 +59,16 @@ public class CameraFollowPlayer : MonoBehaviour
     {
         Player = player;
         Target = target;
+    }
+    public bool IsFollowingPlayer()
+    {
+        if(Player == FindObjectOfType<PlayerMover>().transform)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
