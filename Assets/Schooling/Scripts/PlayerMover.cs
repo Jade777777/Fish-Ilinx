@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -17,12 +18,25 @@ public class PlayerMover : MonoBehaviour
 
     public float deadzone = 8f;
 
+    float sinusoidalMagnitude=0.1f;
+    public float sinusoidalFrequency = 5;
     private Boid boid;
 
+
+    [SerializeField] private float minFOV = 55;
+    [SerializeField] private float maxFOV = 60;
+    private float fovVelocity = 0f;
+
+    
 
     private void Start()
     {
         boid = GetComponent<Boid>();
+        Invoke("ActivateFollowCamera",4f);
+    }
+    public void ActivateFollowCamera()
+    {
+        FindObjectOfType<CameraFollowPlayer>().pauseCameraUpdates = false;
     }
     void Update()
     {
@@ -31,15 +45,24 @@ public class PlayerMover : MonoBehaviour
         float magnitude = (offset.magnitude-deadzone) / smoothDistance;
 
         float impactRange = 0.5f;
-        Vector3 direction = offset.normalized;
+        Vector3 direction = offset.normalized + (transform.up * Mathf.Sin(Time.time*sinusoidalFrequency) * sinusoidalMagnitude);
         AvoidObstacles(out Vector3 avoidance, out float obstacleDistance);
 
         float avoidanceWeight = Mathf.Pow(Mathf.Clamp(avoidance.magnitude, 0, 1 - impactRange) / (1 - impactRange), 2);
         direction = Vector3.Slerp(direction, avoidance, avoidanceWeight);
 
         Vector3 targetVelocity = direction.normalized * Mathf.Lerp(minSpeed, maxSpeed, magnitude);
-        
 
+        if (FindObjectOfType<CameraFollowPlayer>().IsFollowingPlayer())
+        {
+            float targetFOV = Mathf.Lerp(minFOV, maxFOV, magnitude);
+
+            Camera.main.fieldOfView = Mathf.SmoothDamp(Camera.main.fieldOfView, targetFOV, ref fovVelocity, 1f, 5f, Time.deltaTime);
+        }
+        else
+        {
+            Camera.main.fieldOfView = Mathf.SmoothDamp(Camera.main.fieldOfView, maxFOV, ref fovVelocity, 1f, 5f, Time.deltaTime);
+        }
         float deltaRadians = Mathf.Lerp(Mathf.Deg2Rad * Time.deltaTime * turnSpeed,Mathf.Deg2Rad*Time.deltaTime*avoidanceTurnSpeed ,avoidanceWeight );//Mathf.Pow(avoidance.magnitude,2)
         boid.CurrentVelocity = Vector3.RotateTowards(boid.CurrentVelocity, targetVelocity ,deltaRadians , acceleration * Time.deltaTime);
 
@@ -66,8 +89,22 @@ public class PlayerMover : MonoBehaviour
 
 
         transform.position += (boid.CurrentVelocity * Time.deltaTime);
-        if (boid.CurrentVelocity != Vector3.zero) transform.forward = boid.CurrentVelocity;
+
+        if (boid.CurrentVelocity != Vector3.zero)
+        {
+            Vector3 targetDirection = boid.CurrentVelocity.normalized;
+            
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+           
+            transform.rotation = Quaternion.RotateTowards( transform.rotation,targetRotation, 480 * Time.deltaTime);
+
+
+
+            
+        }
+
     }
+  
 
 
 

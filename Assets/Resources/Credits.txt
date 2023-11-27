@@ -1,0 +1,28 @@
+# Headers are marked with !
+!Core Team
+James Zilberman
+Jared Goronkin
+Tessla Muir
+Tyare Daniels
+
+!Game Designer
+James Zilberman
+
+!Gameplay Programmers
+Jared Goronkin
+Tyare Daniels
+Tessla Muir
+
+!Graphics Programming
+Tyare Daniels
+
+!UI Design/Programming
+Tessla Muir
+
+!Level Design
+James Zilberman
+
+!Assets
+Logo - James Zilberman
+Fish Model - Tessla Muir
+Icons by Icons8

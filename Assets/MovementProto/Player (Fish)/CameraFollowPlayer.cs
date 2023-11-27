@@ -7,7 +7,7 @@ public class CameraFollowPlayer : MonoBehaviour
     [SerializeField] private Vector3 Offset = new Vector3 (0f, 0f, 0f);
     [SerializeField] private float SmoothTime = 0f;
     [SerializeField] private float MaxSpeed = 20f;
-    private Vector3 Velocity = Vector3.zero;
+    private Vector3 cameraVelocity = Vector3.zero;
 
     [SerializeField] private Transform Player;
     [SerializeField] private Transform Target;
@@ -16,36 +16,59 @@ public class CameraFollowPlayer : MonoBehaviour
     private float deadzone = 10f;
     [SerializeField]private AnimationCurve deadZoneFallOff;
 
-    public bool boundedX;
-    public bool boundedY;
+
+
+
+    [HideInInspector] public bool boundedX;
+    [HideInInspector] public bool boundedY;
     public float boundYPos;
+
+
+    public bool pauseCameraUpdates = true;
 
     void Update()
     {
-        Vector3 offset = Target.position - Player.position;
-        offset = Vector3.ClampMagnitude(offset, maxDistanceFromPlayer);
+        if (!pauseCameraUpdates)
+        {
+            Vector3 offset = Target.position - Player.position;
+            //prevent player from sliding allong terrain
 
-        Vector3 cameraFocus = Player.position + offset;
+            offset = Vector3.ClampMagnitude(offset, maxDistanceFromPlayer);
 
-        float posX = cameraFocus.x + Offset.x;
-        float posY = cameraFocus.y + Offset.y;
+            Vector3 cameraFocus = Player.position + offset;
 
-        if (boundedX) posX = this.transform.position.x;
-        if (boundedY) posY = boundYPos; //Moves to y position of bounding box if effeect feels off use this.transform.position.y;
+            float posX = cameraFocus.x + Offset.x;
+            float posY = cameraFocus.y + Offset.y;
 
-        Vector3 TargetPosition = new Vector3(posX, posY, cameraFocus.z + Offset.z);
-        //Camera stays still on Z axis
-        //new Vector3(posX, posY, transform.position.z);
+            if (boundedX) posX = this.transform.position.x;
+            if (boundedY) posY = boundYPos; //Moves to y position of bounding box if effeect feels off use this.transform.position.y;
 
-        //deadzone
-        Vector3 screenOffset = Target.position - transform.position + Offset;
-        TargetPosition = Vector3.Lerp(transform.position, TargetPosition, deadZoneFallOff.Evaluate( screenOffset.magnitude/deadzone));
-     
-        transform.position = Vector3.SmoothDamp(transform.position, TargetPosition, ref Velocity, SmoothTime,20,Time.deltaTime);
+            Vector3 TargetPosition = new Vector3(posX, posY, cameraFocus.z + Offset.z);
+            //Camera stays still on Z axis
+            //new Vector3(posX, posY, transform.position.z);
+
+            //deadzone
+            Vector3 screenOffset = Target.position - transform.position + Offset;
+
+            TargetPosition = Vector3.Lerp(transform.position, TargetPosition, deadZoneFallOff.Evaluate(screenOffset.magnitude / deadzone));
+
+            transform.position = Vector3.SmoothDamp(transform.position, TargetPosition, ref cameraVelocity, SmoothTime, MaxSpeed, Time.deltaTime);
+        }
     }
     public void SetTargets(Transform player, Transform target)
     {
         Player = player;
         Target = target;
+    }
+    public bool IsFollowingPlayer()
+    {
+        if(Player == FindObjectOfType<PlayerMover>().transform)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -2723,7 +2723,7 @@ PrefabInstance:
     - target: {fileID: 1137802204658422490, guid: d0574d6184633824ca9550b7d5dea152,
         type: 3}
       propertyPath: SpawnAmount
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1137802204658422490, guid: d0574d6184633824ca9550b7d5dea152,
         type: 3}
@@ -3926,7 +3926,7 @@ PrefabInstance:
     - target: {fileID: 4753451476919676845, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: SpawnAmount
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4753451476919676845, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
@@ -3981,6 +3981,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 903563320578068458, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+    - {fileID: 6705602726207728794, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+    - {fileID: 5741012400117909268, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+    - {fileID: 9073935704414181415, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+    - {fileID: 6822057863878676813, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4075613090215349726, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
