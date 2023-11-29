@@ -59,7 +59,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Main_Texture:
         m_Texture: {fileID: 2800000, guid: db2a6b4dd917e83498adb69a04c592a9, type: 3}
+<<<<<<< Updated upstream:Assets/MovementProto (Ty)/Caustics/CausticsSurface.mat
         m_Scale: {x: 50, y: 50}
+=======
+        m_Scale: {x: 10, y: 10}
+>>>>>>> Stashed changes:Assets/MovementProto/Caustics/CausticsSurface.mat
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -92,14 +96,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Ambient_Illumination: 1
+    - _Ambient_Illumination: 0.8
     - _Blend: 0
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
+<<<<<<< Updated upstream:Assets/MovementProto (Ty)/Caustics/CausticsSurface.mat
     - _Caustics_Brightness: 0.2
+=======
+    - _Caustics_Brightness: 0.6
+>>>>>>> Stashed changes:Assets/MovementProto/Caustics/CausticsSurface.mat
     - _Caustics_Distortion_Factor: 3
     - _Caustics_Distortion_Scale: 7
     - _Caustics_Distortion_Speed: 0.1
@@ -153,6 +161,7 @@ Material:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 0.23616053, g: 0.58540165, b: 0.8207547, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 0.8313726, g: 0.7019608, b: 0.49019605, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
