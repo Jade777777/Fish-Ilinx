@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class WaterFog : MonoBehaviour
 {
-<<<<<<< Updated upstream:Assets/MovementProto (Ty)/WaterShader/WaterFog.cs
-    public float WaterLevel = 21.5f;
-=======
->>>>>>> Stashed changes:Assets/MovementProto/WaterShader/WaterFog.cs
     private bool IsUnderwater;
     [SerializeField] private float WaterSurfaceLevel;
     [SerializeField] private Color UnderwaterColor;
@@ -26,30 +22,9 @@ public class WaterFog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream:Assets/MovementProto (Ty)/WaterShader/WaterFog.cs
-        if(transform.position.y < WaterLevel)
-        {
-            RenderSettings.fog = true;
-            SetUnderwater();
-        }
-        else
-        {   
-            // If we want fog above sea level
-            //SetNormal();
-            
-            // If we want to see above sea level
-            RenderSettings.fog = false;
-        }
-    }
-
-    void SetNormal()
-    {
-        RenderSettings.fogColor = NormalColor;
-        
-=======
         DepthDensity();
->>>>>>> Stashed changes:Assets/MovementProto/WaterShader/WaterFog.cs
     }
+        
 
     void SetUnderwater()
     {

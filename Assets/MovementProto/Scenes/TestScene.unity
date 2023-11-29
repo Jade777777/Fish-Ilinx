@@ -15,11 +15,11 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0, g: 0.07209681, b: 0.447, a: 0.8}
+  m_FogColor: {r: 0, g: 0.44705886, b: 0.92549026, a: 0}
   m_FogMode: 3
   m_FogDensity: 0.02
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogStart: 1
+  m_LinearFogEnd: 1.01
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -840,6 +840,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  boundedX: 0
+  boundedY: 0
+  boundYPos: 0
+  pauseCameraUpdates: 1
 --- !u!1 &2683564088995670460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,6 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03ffe03fbf95e6e4aaa38ecbee787c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Assets/MovementProto (Ty)/Scenes/TestScene.unity
   MainCamera: {fileID: 573264838011508442}
   Background:
     serializedVersion: 2
@@ -1028,6 +1033,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   MovementSpeed: 10
+=======
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+>>>>>>> Stashed changes:Assets/MovementProto/Scenes/TestScene.unity
 --- !u!4 &3573177098367432028
 Transform:
   m_ObjectHideFlags: 0
@@ -1203,9 +1213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f648213b9f4f14c9245be13d10e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterLevel: 21.5
-  NormalColor: {r: 1, g: 1, b: 1, a: 0}
-  UnderwaterColor: {r: 0.16340332, g: 0.3413925, b: 0.8490566, a: 0}
+  WaterSurfaceLevel: 21.5
+  UnderwaterColor: {r: 0, g: 0.41176474, b: 0.9607844, a: 0}
+  FogMode: 3
+  InitialFogDensity: 0.02
+  AdditiveFogDensity: 0.005
 --- !u!114 &4406380100504180054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,6 +1579,7 @@ MonoBehaviour:
   TargetVelocity: {x: 0, y: 0, z: 1}
   CurrentVelocity: {x: 0, y: 0, z: 0}
   neighbors: []
+  isPathing: 0
 --- !u!33 &6199918517316704656
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2117,6 +2130,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   deadzone: 8
+  sinusoidalFrequency: 5
+  minFOV: 55
+  maxFOV: 60
 --- !u!4 &7911393549074042301
 Transform:
   m_ObjectHideFlags: 0
