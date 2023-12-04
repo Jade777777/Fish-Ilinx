@@ -365,9 +365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f648213b9f4f14c9245be13d10e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterLevel: 21.5
-  NormalColor: {r: 1, g: 1, b: 1, a: 0}
+  WaterSurfaceLevel: 0
   UnderwaterColor: {r: 0.16340332, g: 0.3413925, b: 0.8490566, a: 0}
+  FogMode: 0
+  InitialFogDensity: 0.02
+  AdditiveFogDensity: 0.005
 --- !u!1 &1673641534520083031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,7 +1692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!135 &6168359884834334055
 SphereCollider:
   m_ObjectHideFlags: 0
