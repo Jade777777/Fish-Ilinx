@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14283e55ce1db594183acaa48adac4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 4
-  totalFish: 0000000000000000000000000000000000000000
+  levels: 6
+  totalFish: 01000000020000000300000003000000050000000800000032000000

@@ -8,9 +8,9 @@ public class GameManager : MonoBehaviour
 {
     
     
-    [SerializeField] private int levels; // Amount of levels
+    //[SerializeField] private int levels; // Amount of levels
     private int currentLevel = 0;
-    [SerializeField] private int[] totalFish; // Per level
+    [SerializeField] private List<int> totalFish; // Per level
     private int[] collectedFish; // Per level
     private bool[] isLevelUnlocked; // Per level
     
@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         // Initialize arrays
-        collectedFish = new int[levels];
-        isLevelUnlocked = new bool[levels];
+        collectedFish = new int[totalFish.Count];
+        isLevelUnlocked = new bool[totalFish.Count];
 
         // Fill out arrays -- load data later?
         Array.Fill(collectedFish, 0);
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public int GetLevelCount()
     {
-        return levels;
+        return totalFish.Count;
     }
 
     public int GetCurrentLevel()
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     public int GetCollectedFishFromAllLevels()
     {
         int total = 0;
-        for (int i = 0; i < levels; i++)
+        for (int i = 0; i < totalFish.Count; i++)
         {
             total += collectedFish[i];
         }

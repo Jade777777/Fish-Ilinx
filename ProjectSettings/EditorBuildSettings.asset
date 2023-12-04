@@ -12,15 +12,24 @@ EditorBuildSettings:
     path: Assets/_Levels/_Menu/Menu.unity
     guid: a15d52cd4009b3d4d9a34d6f35d004db
   - enabled: 1
-    path: Assets/_Levels/Scenes/Seaweed 1.unity
-    guid: e14d451ad1c2c804cac42f44422905eb
+    path: Assets/_Levels/Scenes/Intro (1 fish).unity
+    guid: 1afed292f374b664ca232bfad1716770
+  - enabled: 1
+    path: Assets/_Levels/Scenes/Rising (2 fish).unity
+    guid: 06aac76dab8fe4543bb042805463e8e4
+  - enabled: 1
+    path: Assets/_Levels/Scenes/Hidden (3 fish).unity
+    guid: 7e291d84ade9e0944bb2ade613e357bc
+  - enabled: 1
+    path: Assets/_Levels/Scenes/Under (3 fish).unity
+    guid: 1c283c4df921c864a852d33cdeff8be2
+  - enabled: 1
+    path: Assets/_Levels/Scenes/Foreground (5 fish).unity
+    guid: 46237987792cfbb4898cca21a5358804
+  - enabled: 1
+    path: Assets/_Levels/Scenes/Around (8 fish).unity
+    guid: 8cb135a69dbf628479adf93f23dd4d2c
   - enabled: 1
     path: Assets/_Levels/TestLevels/Test Level.unity
     guid: 68d57ab39707e244a9baa367cf9ac7b7
-  - enabled: 1
-    path: Assets/_Levels/TestLevels/Test Level 1.unity
-    guid: 9046d9ff1e13b2547b094b935a38e3f8
-  - enabled: 1
-    path: Assets/_Levels/TestLevels/Test Level 2.unity
-    guid: 26c001ae7cf2f274987ca9e495236d2e
   m_configObjects: {}

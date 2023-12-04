@@ -20,6 +20,8 @@ public class CreditsHandler : MonoBehaviour
     [SerializeField] Scrollbar scrollbar;
     [SerializeField] private float scrollSpeed = 0.1f;
     private bool isDragging = false;
+    private bool pauseScroll = true;
+    private IEnumerator StartScrollingCoroutine;
 
 
     List<string> headers = new List<string>();
@@ -113,7 +115,7 @@ public class CreditsHandler : MonoBehaviour
 
     void Update()
     {
-        if (!isDragging)
+        if (!isDragging && !pauseScroll)
         {
             // Gradually scroll down
             scrollbar.value -= scrollSpeed * Time.deltaTime;
@@ -121,5 +123,24 @@ public class CreditsHandler : MonoBehaviour
             // Clamp value between 0 and 1
             scrollbar.value = Mathf.Clamp01(scrollbar.value);
         }
+    }
+
+    public void StartScroll()
+    {
+        StartScrollingCoroutine = WaitBeforeScrolling(1f);
+        StartCoroutine(StartScrollingCoroutine);
+    }
+
+    public void ResetScroll()
+    {
+        pauseScroll = true;
+        scrollbar.value = 1f;
+    }
+
+    private IEnumerator WaitBeforeScrolling(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        pauseScroll = false;
     }
 }
