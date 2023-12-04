@@ -57,7 +57,7 @@ public class PlayerMover : MonoBehaviour
         {
             float targetFOV = Mathf.Lerp(minFOV, maxFOV, magnitude);
 
-            Camera.main.fieldOfView = Mathf.SmoothDamp(Camera.main.fieldOfView, targetFOV, ref fovVelocity, 1f, 5f, Time.deltaTime);
+            Camera.main.fieldOfView = Mathf.SmoothDamp(Camera.main.fieldOfView, targetFOV, ref fovVelocity, 1f, 20f, Time.deltaTime);
         }
         else
         {

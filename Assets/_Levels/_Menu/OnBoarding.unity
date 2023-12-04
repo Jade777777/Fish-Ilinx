@@ -524,6 +524,7 @@ PrefabInstance:
     - {fileID: 6822057863878676813, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
     - {fileID: 4587792614901164234, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
     - {fileID: 2665663636508773638, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+    - {fileID: 2543168728485203769, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
@@ -2144,38 +2145,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
+      propertyPath: levels
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
+        type: 3}
       propertyPath: menuIndex
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
-      propertyPath: totalFish.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
-        type: 3}
-      propertyPath: totalFish.Array.data[0]
+      propertyPath: totalFish.Array.data[7]
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
-        type: 3}
-      propertyPath: totalFish.Array.data[1]
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
-        type: 3}
-      propertyPath: totalFish.Array.data[2]
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
-        type: 3}
-      propertyPath: totalFish.Array.data[3]
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
-        type: 3}
-      propertyPath: totalFish.Array.data[4]
-      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

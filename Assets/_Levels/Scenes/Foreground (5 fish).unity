@@ -1752,6 +1752,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 2543168728485203769, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3581723226522358669, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: radius
