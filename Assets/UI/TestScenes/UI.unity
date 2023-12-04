@@ -607,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 5758546295040521363, guid: 60a7e67f08ec3df409af043cb8d22679,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -694,6 +694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Credits UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 614715576207421098, guid: a66257a7ab3f95446bef62ec59eda7d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3047684496997969888, guid: a66257a7ab3f95446bef62ec59eda7d8,
         type: 3}
@@ -838,17 +843,17 @@ PrefabInstance:
     - target: {fileID: 5869115072568309716, guid: a66257a7ab3f95446bef62ec59eda7d8,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6800169162349713764, guid: a66257a7ab3f95446bef62ec59eda7d8,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6800169162349713764, guid: a66257a7ab3f95446bef62ec59eda7d8,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8133897434810447828, guid: a66257a7ab3f95446bef62ec59eda7d8,
         type: 3}
