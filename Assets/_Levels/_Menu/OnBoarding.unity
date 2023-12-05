@@ -381,6 +381,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -29.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2139930798430215137, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 
+      objectReference: {fileID: 38836581}
     - target: {fileID: 3363192840092084862, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -531,6 +536,12 @@ PrefabInstance:
 --- !u!4 &38836580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4466204171972273499, guid: 21afd424130e9ff44b5b25387b02c6be,
+    type: 3}
+  m_PrefabInstance: {fileID: 38836579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &38836581 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4813060026946958044, guid: 21afd424130e9ff44b5b25387b02c6be,
     type: 3}
   m_PrefabInstance: {fileID: 38836579}
   m_PrefabAsset: {fileID: 0}
@@ -4547,6 +4558,11 @@ PrefabInstance:
     - target: {fileID: 387713799724835438, guid: 60a7e67f08ec3df409af043cb8d22679,
         type: 3}
       propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 387713799724835438, guid: 60a7e67f08ec3df409af043cb8d22679,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 942342579304160865, guid: 60a7e67f08ec3df409af043cb8d22679,

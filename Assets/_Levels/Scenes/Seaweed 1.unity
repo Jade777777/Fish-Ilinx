@@ -4513,6 +4513,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.2999992
       objectReference: {fileID: 0}
+    - target: {fileID: 2139930798430215137, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 
+      objectReference: {fileID: 1275657414}
     - target: {fileID: 2231051979558499185, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4537,6 +4542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: WaterLevel
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479868600284423729, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 34.5
       objectReference: {fileID: 0}
     - target: {fileID: 3581723226522358669, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
@@ -5109,6 +5119,12 @@ PrefabInstance:
       addedObject: {fileID: 1665403469}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+--- !u!4 &1275657414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4813060026946958044, guid: 21afd424130e9ff44b5b25387b02c6be,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275657413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1295417163 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3375351442191440179, guid: 923cf80a7f955b34d90ac7a21df68893,
