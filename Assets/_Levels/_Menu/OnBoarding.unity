@@ -4546,8 +4546,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 387713799724835438, guid: 60a7e67f08ec3df409af043cb8d22679,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -230
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 942342579304160865, guid: 60a7e67f08ec3df409af043cb8d22679,
         type: 3}
@@ -4808,6 +4808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393522588272186325, guid: 60a7e67f08ec3df409af043cb8d22679,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8979356208346136109, guid: 60a7e67f08ec3df409af043cb8d22679,
         type: 3}

@@ -187,7 +187,7 @@ GameObject:
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1223055333295434619
 Transform:
@@ -365,9 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f648213b9f4f14c9245be13d10e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterSurfaceLevel: 0
-  UnderwaterColor: {r: 0.16340332, g: 0.3413925, b: 0.8490566, a: 0}
-  FogMode: 0
+  WaterSurfaceLevel: 21
+  UnderwaterColor: {r: 0.20784314, g: 0.30980393, b: 0.5176471, a: 1}
+  FogMode: 3
   InitialFogDensity: 0.02
   AdditiveFogDensity: 0.005
 --- !u!1 &1673641534520083031
@@ -2058,6 +2058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horizontal Camera Bounding Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6574129293880776979, guid: 923e901d956f7734ca2b8198b043c1cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2137,6 +2142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vertical Camera Bounds Box
       objectReference: {fileID: 0}
+    - target: {fileID: 5341430083692977451, guid: 0a978b2e56684ca40a8e061d1e798fc0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2215,6 +2225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Horizontal Camera Bounding Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574129293880776979, guid: 923e901d956f7734ca2b8198b043c1cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2387,7 +2402,7 @@ PrefabInstance:
     - target: {fileID: 2127392783070634034, guid: 036926b4d8b4f42479f81fa6976e35d5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4385187249834933129, guid: 036926b4d8b4f42479f81fa6976e35d5,
         type: 3}
@@ -2396,11 +2411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1046304094612974744, guid: 036926b4d8b4f42479f81fa6976e35d5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4054391182683031405}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 036926b4d8b4f42479f81fa6976e35d5, type: 3}
 --- !u!4 &1230976856672753704 stripped
@@ -2923,6 +2934,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vertical Camera Bounds Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5341430083692977451, guid: 0a978b2e56684ca40a8e061d1e798fc0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3395,88 +3411,4 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2616419540472224369, guid: 2fbfaa956f2cc124ea935236d560f7b5,
     type: 3}
   m_PrefabInstance: {fileID: 8947140092624332732}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &9168925479498344957
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1230976856672753704}
-    m_Modifications:
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -34.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574129293880776979, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_Name
-      value: Horizontal Camera Bounding Box (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574129293880776979, guid: 923e901d956f7734ca2b8198b043c1cd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 923e901d956f7734ca2b8198b043c1cd, type: 3}
---- !u!4 &4054391182683031405 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5150576912364121744, guid: 923e901d956f7734ca2b8198b043c1cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 9168925479498344957}
   m_PrefabAsset: {fileID: 0}
