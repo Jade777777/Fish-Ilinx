@@ -908,7 +908,36 @@ PrefabInstance:
     - target: {fileID: 1839655309556395662, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: 56.7
+=======
+      value: 129
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839655309556395662, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 90.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139930798430215137, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 
+      objectReference: {fileID: 905871235215738588}
+    - target: {fileID: 2332475668760236293, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543168728485203769, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+>>>>>>> Stashed changes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479868600284423729, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 89.9
       objectReference: {fileID: 0}
     - target: {fileID: 3763400761723596170, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
@@ -1198,3 +1227,9 @@ PrefabInstance:
       addedObject: {fileID: 1593813997}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21afd424130e9ff44b5b25387b02c6be, type: 3}
+--- !u!4 &905871235215738588 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4813060026946958044, guid: 21afd424130e9ff44b5b25387b02c6be,
+    type: 3}
+  m_PrefabInstance: {fileID: 905871235215738587}
+  m_PrefabAsset: {fileID: 0}

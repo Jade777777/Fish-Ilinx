@@ -3796,6 +3796,54 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f2b2182b4d378444cbd02608e4b289ef, type: 2}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 1725993311302527571, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 58.099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725993311302527571, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725993311302527571, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.2999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839655309556395662, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839655309556395662, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839655309556395662, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 126.899994
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839655309556395662, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 39.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839655309556395662, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.2999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139930798430215137, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 
+      objectReference: {fileID: 2011231004}
+>>>>>>> Stashed changes
     - target: {fileID: 2231051979558499185, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3810,6 +3858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: WaterLevel
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479868600284423729, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 34.5
       objectReference: {fileID: 0}
     - target: {fileID: 3581723226522358669, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
@@ -7090,6 +7143,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7656440141891470085, guid: 923cf80a7f955b34d90ac7a21df68893,
     type: 3}
   m_PrefabInstance: {fileID: 827578598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2011231004 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4813060026946958044, guid: 21afd424130e9ff44b5b25387b02c6be,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275657413}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2014505265
 PrefabInstance:

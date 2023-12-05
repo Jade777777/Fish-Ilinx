@@ -6,10 +6,12 @@ using UnityEngine.VFX;
 
 public class PlayEffect : MonoBehaviour
 {
+    public Transform WaterSurfaceLevel;
     public VisualEffect _WaterTrail;
     public ParticleSystem _RippleEffect;
     public Transform Player;
     //WaterLevel = 22;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class PlayEffect : MonoBehaviour
 
     void Breaching()
     {
-        if (Player.position.y > 21.55 && Player.position.y < 22.5)
+        if (Player.position.y > (WaterSurfaceLevel.position.y + .55) && Player.position.y < (WaterSurfaceLevel.position.y + 1.55))
         {
             VisualEffect NewWaterTrail = Instantiate(_WaterTrail, transform.position, transform.rotation);
 
@@ -38,7 +40,7 @@ public class PlayEffect : MonoBehaviour
 
     void Skimming()
     {
-        if (Player.position.y >= 21 && Player.position.y < 21.53)
+        if (Player.position.y >= WaterSurfaceLevel.position.y && Player.position.y < (WaterSurfaceLevel.position.y + .53))
         {
             ParticleSystem NewRipple = Instantiate(_RippleEffect, transform.position, transform.rotation);
 
