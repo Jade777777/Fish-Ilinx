@@ -12,7 +12,7 @@ public class WaterFog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RenderSettings.fog = false;
+        //RenderSettings.fog = false;
         SetUnderwater();
     }
 
@@ -37,9 +37,10 @@ public class WaterFog : MonoBehaviour
         if (transform.position.y > WaterSurfaceLevel)
         {
             Depth = default;
+            
         }
 
-        if (transform.position.y < WaterSurfaceLevel & transform.position.y > 0)
+        if (transform.position.y < WaterSurfaceLevel & transform.position.y >= 0)
         {
             Depth = 1;
         }
@@ -53,7 +54,7 @@ public class WaterFog : MonoBehaviour
         {
             Depth = 3;
         }
-
+        Debug.Log(Depth+ "    "+transform.position.y);
         switch (Depth)
         {
             case 3:
