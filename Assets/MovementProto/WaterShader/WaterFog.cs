@@ -54,7 +54,7 @@ public class WaterFog : MonoBehaviour
         {
             Depth = 3;
         }
-        Debug.Log(Depth+ "    "+transform.position.y);
+
         switch (Depth)
         {
             case 3:

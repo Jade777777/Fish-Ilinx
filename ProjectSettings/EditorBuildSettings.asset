@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Levels/Scenes/Seaweed 1.unity
     guid: e14d451ad1c2c804cac42f44422905eb
+  - enabled: 1
+    path: Assets/Schooling/Testing/SchoolingDemo.unity
+    guid: a29f080ecf383ff4b9fba1d21e335705
   m_configObjects: {}

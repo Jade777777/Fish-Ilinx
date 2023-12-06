@@ -2394,6 +2394,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
+      propertyPath: totalFish.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
+        type: 3}
+      propertyPath: totalFish.Array.data[3]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
+        type: 3}
+      propertyPath: totalFish.Array.data[4]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
+        type: 3}
+      propertyPath: totalFish.Array.data[5]
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
+        type: 3}
       propertyPath: totalFish.Array.data[7]
       value: 1
       objectReference: {fileID: 0}
@@ -4811,7 +4831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8393522588272186325, guid: 60a7e67f08ec3df409af043cb8d22679,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8979356208346136109, guid: 60a7e67f08ec3df409af043cb8d22679,
