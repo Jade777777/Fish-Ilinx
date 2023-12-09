@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDistance: 12
-  Weight: 1
+  Weight: 1.5
 --- !u!65 &6317724495141123848
 BoxCollider:
   m_ObjectHideFlags: 0
