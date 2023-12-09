@@ -254,6 +254,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelStart
       objectReference: {fileID: 0}
+    - target: {fileID: 6246985444137849367, guid: 036926b4d8b4f42479f81fa6976e35d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6246985444137849367, guid: 036926b4d8b4f42479f81fa6976e35d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470157094758458169, guid: 036926b4d8b4f42479f81fa6976e35d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470157094758458169, guid: 036926b4d8b4f42479f81fa6976e35d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.470001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895034092185564385, guid: 036926b4d8b4f42479f81fa6976e35d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895034092185564385, guid: 036926b4d8b4f42479f81fa6976e35d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
