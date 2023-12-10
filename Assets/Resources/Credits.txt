@@ -22,6 +22,9 @@ Tessla Muir
 !Level Design
 James Zilberman
 
+!Music
+Ryan Keller
+
 !Assets
 Logo - James Zilberman
 Fish Model - Tessla Muir
