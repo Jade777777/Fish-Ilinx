@@ -7,6 +7,9 @@ public class Restart : MonoBehaviour
 {
     int onboardingIndex = 0;
     int testLevelIndex = 8;
+    [SerializeField] GameObject musicParent;
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -25,8 +28,15 @@ public class Restart : MonoBehaviour
 
     public void RestartGame()
     {
+        // Restart game logic
         GameManager gameManager = FindObjectOfType<GameManager>();
         if (gameManager != null) Destroy(gameManager.gameObject);
         SceneManager.LoadScene(onboardingIndex);
+
+        // Reset music
+        foreach (Transform child in musicParent.transform)
+        {
+            child.GetComponent<AudioSource>().Stop();
+        }
     }
 }
