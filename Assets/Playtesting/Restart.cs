@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
-
-    int onboardingIndex =0;
+    int onboardingIndex = 0;
     int testLevelIndex = 8;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             GameManager gameManager = FindObjectOfType<GameManager>();
-            if(gameManager != null) Destroy(gameManager.gameObject);
+            if (gameManager != null) Destroy(gameManager.gameObject);
             SceneManager.LoadScene(onboardingIndex);
         }
         if (Input.GetKeyDown(KeyCode.T))
@@ -22,5 +21,12 @@ public class Restart : MonoBehaviour
             Destroy(gameManager.gameObject);
             SceneManager.LoadScene(testLevelIndex);
         }
+    }
+
+    public void RestartGame()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (gameManager != null) Destroy(gameManager.gameObject);
+        SceneManager.LoadScene(onboardingIndex);
     }
 }
