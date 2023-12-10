@@ -775,7 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1756608384954818671}
   soundHolder: {fileID: 0}
-  startValue: 60
+  startValue: 85
 --- !u!1 &1667976299065233447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 2928536888786337119}
   soundHolder: {fileID: 0}
-  startValue: 30
+  startValue: 70
 --- !u!1 &4327780199158900239
 GameObject:
   m_ObjectHideFlags: 0
