@@ -3007,7 +3007,7 @@ PrefabInstance:
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
       propertyPath: totalFish.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
@@ -3023,6 +3023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: totalFish.Array.data[5]
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
+        type: 3}
+      propertyPath: totalFish.Array.data[6]
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 9221811913563983796, guid: 349524210af5d22489ba61031b8e002e,
         type: 3}
