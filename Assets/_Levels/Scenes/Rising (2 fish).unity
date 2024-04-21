@@ -923,6 +923,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3479868600284423729, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 3581723226522358669, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: radius
@@ -936,7 +941,7 @@ PrefabInstance:
     - target: {fileID: 3763400761723596170, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 268.7
+      value: 266.54
       objectReference: {fileID: 0}
     - target: {fileID: 4075613090215349726, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
@@ -1256,7 +1261,12 @@ PrefabInstance:
     - target: {fileID: 7849414764675032540, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 74.3
+      value: 58.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849414764675032540, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 43.5
       objectReference: {fileID: 0}
     - target: {fileID: 7857416255643069608, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}

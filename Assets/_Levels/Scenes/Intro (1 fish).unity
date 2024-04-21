@@ -316,7 +316,7 @@ PrefabInstance:
     - target: {fileID: 1725993311302527571, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.79999924
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1839655309556395662, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
@@ -382,6 +382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -34.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479868600284423729, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: WaterSurfaceLevel
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3581723226522358669, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
@@ -467,6 +472,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.79999924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396697090102080391, guid: 21afd424130e9ff44b5b25387b02c6be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -176
       objectReference: {fileID: 0}
     - target: {fileID: 4469922530563604767, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
@@ -651,7 +661,7 @@ PrefabInstance:
     - target: {fileID: 7849414764675032540, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.500001
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 7857416255643069608, guid: 21afd424130e9ff44b5b25387b02c6be,
         type: 3}
