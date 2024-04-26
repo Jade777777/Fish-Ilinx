@@ -145,6 +145,7 @@ public class BoidProcess : MonoBehaviour
     public Vector3 BoundsRule(Boid boid)
     {
         Vector3 direction = Vector3.zero;
+        bounds = boundCollider.bounds;
         if (!bounds.Contains(boid.transform.position))
         {
             Vector3 offset = bounds.ClosestPoint(boid.transform.position)-boid.transform.position;
