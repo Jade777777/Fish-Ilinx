@@ -49,7 +49,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0, y: 0}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -83,9 +83,9 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _AmplitudeX: 0
-    - _AmplitudeY: 0.197
-    - _AmplitudeZ: 2
+    - _AmplitudeX: 0.2
+    - _AmplitudeY: 0
+    - _AmplitudeZ: 0.31
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -98,13 +98,13 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FrequencyX: 0
-    - _FrequencyY: 0.33
-    - _FrequencyZ: 0.94
+    - _FrequencyX: 4.15
+    - _FrequencyY: 0
+    - _FrequencyZ: 0.86
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HeadLimit: 1.94
+    - _HeadLimit: -0.31
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -113,12 +113,13 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpeedX: 0
-    - _SpeedY: 2.2
-    - _SpeedZ: 10
+    - _SpeedX: 0.67
+    - _SpeedY: 0
+    - _SpeedZ: 0.19
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _TimeOffset: 2.46
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
