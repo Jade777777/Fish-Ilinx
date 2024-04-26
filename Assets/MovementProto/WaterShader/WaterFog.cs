@@ -31,50 +31,15 @@ public class WaterFog : MonoBehaviour
 
     void DepthDensity()
     {
-        int Depth = 0;
-
-        // You can change the y values to support the depth of your level
-        if (transform.position.y > WaterSurfaceLevel)
+        if (transform.position.y >= WaterSurfaceLevel)
         {
-            Depth = default;
-            
+            RenderSettings.fog = false;
         }
-
-        if (transform.position.y < WaterSurfaceLevel & transform.position.y >= 0)
+        else
         {
-            Depth = 1;
-        }
-
-        if (transform.position.y < 0 & transform.position.y > -25)
-        {
-            Depth = 2;
-        }
-
-        if (transform.position.y < -25)
-        {
-            Depth = 3;
-        }
-
-        switch (Depth)
-        {
-            case 3:
-                RenderSettings.fog = true;
-                RenderSettings.fogDensity = InitialFogDensity + (AdditiveFogDensity * 2);
-                break;
-
-            case 2:
-                RenderSettings.fog = true;
-                RenderSettings.fogDensity = InitialFogDensity + AdditiveFogDensity;
-                break;
-
-            case 1:
-                RenderSettings.fog = true;
-                RenderSettings.fogDensity = InitialFogDensity;
-                break;
-
-            default:
-                RenderSettings.fog = false;
-                break;
+            RenderSettings.fog = true;
+            AdditiveFogDensity = Mathf.Clamp(((WaterSurfaceLevel - transform.position.y) / 3000), 0f, .02f);
+            RenderSettings.fogDensity = InitialFogDensity + AdditiveFogDensity;
         }
     }
 }
