@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
-  smoothDistance: 8
+  smoothDistance: 6.5
   maxSpeed: 11
   minSpeed: 2
   turnSpeed: 95
@@ -78,7 +78,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
-  deadzone: 2
+  deadzone: 3
   sinusoidalFrequency: 5
   minFOV: 45
   maxFOV: 60
