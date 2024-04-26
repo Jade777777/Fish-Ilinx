@@ -86,7 +86,7 @@ MonoBehaviour:
   boidRenderer: {fileID: 4189975117369672610}
   baseColor: {r: 0.26155213, g: 0.26518524, b: 0.5849056, a: 1}
   changerColor: {r: 1, g: 0.5488479, b: 0.34509802, a: 1}
-  pathingColor: {r: 1, g: 1, b: 1, a: 1}
+  pathingColor: {r: 0.7411765, g: 0.8065577, b: 1, a: 1}
   maxNeighbors: 4
   pathingWeight: 0.8
 --- !u!1001 &3306870876538478374

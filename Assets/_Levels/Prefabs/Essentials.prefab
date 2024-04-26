@@ -1694,9 +1694,9 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
-  startColor: {r: 0.4188679, g: 0.55185115, b: 1, a: 1}
-  endColor: {r: 0.6264151, g: 0.9967087, b: 1, a: 0.3254902}
-  maxColor: {r: 1, g: 0.61452514, b: 0, a: 1}
+  startColor: {r: 0.21573515, g: 0.29657418, b: 0.5660378, a: 1}
+  endColor: {r: 0.25290138, g: 0.59896713, b: 0.6037736, a: 0.3254902}
+  maxColor: {r: 0.754717, g: 0.5959646, b: 0.3446066, a: 1}
 --- !u!135 &6168359884834334055
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1780,7 +1780,7 @@ LineRenderer:
         outWeight: 1
       - serializedVersion: 3
         time: 1
-        value: 0.15337425
+        value: 0.17791413
         inSlope: 0
         outSlope: 0
         tangentMode: 0
