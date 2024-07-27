@@ -12,7 +12,7 @@ public class ColorChanger : MonoBehaviour
     public Color changerColor;
     public Color pathingColor;
     public float maxNeighbors=6;
-    public float pathingWeight=0.35f;
+    public float pathingWeight=1f;
     private void Start()
     {
         boid = GetComponent<Boid>();
@@ -21,6 +21,7 @@ public class ColorChanger : MonoBehaviour
     }
     void Update()
     {
+        
         Color targetColor = Color.Lerp(baseColor, changerColor, boid.neighbors.Count / maxNeighbors);
         if (boid.isPathing)
         {

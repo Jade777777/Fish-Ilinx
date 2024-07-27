@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Restart : MonoBehaviour
 {
     int onboardingIndex = 0;
-    int testLevelIndex = 8;
+    int testLevelIndex = 9;
     [SerializeField] GameObject musicParent;
 
 

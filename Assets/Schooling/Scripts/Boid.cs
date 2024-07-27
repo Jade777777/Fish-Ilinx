@@ -8,4 +8,5 @@ public class Boid : MonoBehaviour
     public Vector3 CurrentVelocity = Vector3.zero;
     public List<Boid> neighbors;
     public bool isPathing;
+    
 }

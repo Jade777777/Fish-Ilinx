@@ -84,11 +84,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidRenderer: {fileID: 4189975117369672610}
-  baseColor: {r: 0.40392157, g: 0.5017657, b: 0.76862746, a: 1}
-  changerColor: {r: 1, g: 1, b: 1, a: 1}
-  pathingColor: {r: 1, g: 1, b: 1, a: 1}
-  maxNeighbors: 5
-  pathingWeight: 0.35
+  baseColor: {r: 0.26155213, g: 0.26518524, b: 0.5849056, a: 1}
+  changerColor: {r: 1, g: 0.5488479, b: 0.34509802, a: 1}
+  pathingColor: {r: 0.7411765, g: 0.8065577, b: 1, a: 1}
+  maxNeighbors: 4
+  pathingWeight: 0.8
 --- !u!1001 &3306870876538478374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,8 +180,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ec47dc7ac75f7c14aa06fbad34ca2169,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6035897893071657615}
   m_SourcePrefab: {fileID: 100100000, guid: ec47dc7ac75f7c14aa06fbad34ca2169, type: 3}
+--- !u!1 &2388372744147575415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ec47dc7ac75f7c14aa06fbad34ca2169,
+    type: 3}
+  m_PrefabInstance: {fileID: 3306870876538478374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6035897893071657615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2388372744147575415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d45158a78cf3c4f84e70a46ddc3a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 2800000, guid: e87f4a8c89e70eb42895105e89434ea7, type: 3}
 --- !u!4 &3057632950105700557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec47dc7ac75f7c14aa06fbad34ca2169,

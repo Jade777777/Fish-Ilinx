@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
-  smoothDistance: 8
+  smoothDistance: 6.5
   maxSpeed: 11
   minSpeed: 2
   turnSpeed: 95
@@ -78,7 +78,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
-  deadzone: 2
+  deadzone: 3
   sinusoidalFrequency: 5
   minFOV: 45
   maxFOV: 60
@@ -348,17 +348,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ec47dc7ac75f7c14aa06fbad34ca2169,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec47dc7ac75f7c14aa06fbad34ca2169,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec47dc7ac75f7c14aa06fbad34ca2169,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec47dc7ac75f7c14aa06fbad34ca2169,
         type: 3}
@@ -409,6 +409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ec47dc7ac75f7c14aa06fbad34ca2169,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: ec47dc7ac75f7c14aa06fbad34ca2169,
         type: 3}
